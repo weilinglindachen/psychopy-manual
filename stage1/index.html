@@ -80,7 +80,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#psychopy-builder" class="md-skip">
+        <a href="#psychopy" class="md-skip">
           跳轉到
         </a>
       
@@ -327,10 +327,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#psychopy-builder" class="md-nav__link">
+  <a href="#psychopy" class="md-nav__link">
     <span class="md-ellipsis">
       
-        開始之前：認識 PsychoPy Builder
+        開始之前：認識 PsychoPy
       
     </span>
   </a>
@@ -544,7 +544,8 @@
 <li>在 CSV 中記錄每題答對或答錯</li>
 </ol>
 <hr />
-<h2 id="psychopy-builder">開始之前：認識 PsychoPy Builder<a class="headerlink" href="#psychopy-builder" title="Permanent link">&para;</a></h2>
+<h2 id="psychopy">開始之前：認識 PsychoPy<a class="headerlink" href="#psychopy" title="Permanent link">&para;</a></h2>
+<h3 id="builder">Builder<a class="headerlink" href="#builder" title="Permanent link">&para;</a></h3>
 <p><strong>Builder</strong> 是 PsychoPy 提供的「不用寫程式」視覺化介面，開啟 PsychoPy 後預設會看到它：</p>
 <ul>
 <li>整個實驗是用一個個 <strong>Routine</strong>（例如 <code>trial</code>）組成</li>
@@ -598,6 +599,15 @@
 </ul>
 <p>Slider、Image、Mouse 目前用不到，先不用理會，之後若實驗設計有變動再另外說明。</p>
 </div>
+<h3 id="runner">Runner<a class="headerlink" href="#runner" title="Permanent link">&para;</a></h3>
+<p><strong>Runner</strong> 是 PsychoPy 用來實際執行實驗、顯示執行紀錄的視窗。在 Builder 按下綠色播放鍵後，PsychoPy 會自動切換到 Runner 畫面並開始執行。</p>
+<p><a class="screenshot-link" href="../assets/runner.png" target="_blank"><img alt="PsychoPy Runner 視窗，顯示 Desktop/Browser/Pavlovia 執行選項與 Stdout 執行紀錄" src="../assets/runner.png" /></a></p>
+<ul>
+<li>上方的 <strong>Pilot / Run</strong> 切換開關：決定用哪種模式執行</li>
+<li><strong>Desktop</strong>：在本機視窗中執行實驗（這份手冊主要使用這個）</li>
+<li><strong>Browser</strong>／<strong>Pavlovia</strong>：透過瀏覽器或線上平台執行，目前不會用到</li>
+<li>下方的 <strong>Stdout</strong> 分頁：顯示實驗執行過程的完整記錄，包含警告訊息（例如 dropped frames）以及最後是否出現 <code>Experiment completed</code></li>
+</ul>
 <h2 id="1-trial">任務 1：建立最小單一 trial<a class="headerlink" href="#1-trial" title="Permanent link">&para;</a></h2>
 <h3 id="_2">目標<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
 <p>先建立一個能顯示 fixation、顯示固定句子、接受 <code>f/j</code>，並記錄反應時間的最小實驗。</p>
@@ -1430,7 +1440,7 @@ j = Correct
     <span class="md-icon" title="最後更新">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime" title="2026年8月9日 00:33:05 CST">2026年8月9日 00:33:05</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime" title="2026年8月9日 00:59:16 CST">2026年8月9日 00:59:16</span>
   </span>
 
     
