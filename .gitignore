@@ -1,0 +1,7 @@
+.DS_Store
+site/
+PsychoPy_實驗建置手冊_第一到第二階段_除錯整合版(2).md
+data/
+__pycache__/
+*.pyc
+.venv/

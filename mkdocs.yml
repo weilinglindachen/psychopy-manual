@@ -1,0 +1,76 @@
+site_name: PsychoPy 音樂 × 語言實驗建置手冊
+site_description: PsychoPy Builder 建置音樂與語言判斷實驗的完整教學手冊
+site_author: Jessy
+docs_dir: docs
+
+repo_url: https://github.com/weilinglindachen/psychopy-manual
+repo_name: weilinglindachen/psychopy-manual
+edit_uri: edit/main/docs/
+
+theme:
+  name: material
+  language: zh-TW
+  icon:
+    repo: fontawesome/brands/github
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/weather-sunny
+        name: 切換至深色模式
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/weather-night
+        name: 切換至淺色模式
+  features:
+    - navigation.expand
+    - navigation.top
+    - navigation.footer
+    - navigation.indexes
+    - toc.integrate
+    - search.suggest
+    - search.highlight
+    - content.code.copy
+    - content.tabs.link
+
+plugins:
+  - search
+  - git-revision-date-localized:
+      type: datetime
+      timezone: Asia/Taipei
+      locale: zh
+      fallback_to_build_date: true
+
+nav:
+  - 首頁: index.md
+  - 第一階段：純句子判斷核心: stage1.md
+  - 第二階段：音樂與正式時間安排: stage2.md
+  - 第三階段：擴充成 48 trials: stage3.md
+  - 第四階段：完整受試者實驗: stage4.md
+  - 第五階段：測試與正式定稿: stage5.md
+
+extra_css:
+  - stylesheets/extra.css
+
+markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.highlight
+  - tables
+  - attr_list
+  - md_in_html
+  - toc:
+      permalink: true
+      title: 本頁內容
+      toc_depth: "2-2"
+
+extra:
+  social: []

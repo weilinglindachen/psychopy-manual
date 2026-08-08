@@ -1,0 +1,30 @@
+name: 部署手冊網站到 GitHub Pages
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 取出程式碼
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0 # 需要完整 git 歷史，「最後更新時間」外掛才能讀到每個檔案的最後 commit 時間
+
+      - name: 安裝 Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.x"
+
+      - name: 安裝 mkdocs-material
+        run: pip install -r requirements.txt
+
+      - name: 建置並部署到 gh-pages 分支
+        run: mkdocs gh-deploy --force

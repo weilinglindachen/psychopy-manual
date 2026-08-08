@@ -1,0 +1,25 @@
+/* 加寬內文閱讀欄位，讓截圖、表格有更多空間顯示 */
+.md-grid {
+  max-width: 1440px;
+}
+
+/* 左側選單保留每個任務（H2），但不顯示任務內的小步驟（H3），
+   由 mkdocs.yml 的 toc_depth: "2-2" 控制只收錄 H2 標題；
+   theme.features 的 toc.integrate 讓「本頁內容」直接併入左側選單，
+   不再有獨立的右側欄。 */
+
+/* 截圖統一顯示寬度、置中，並提示可點擊放大（不受原始解析度影響） */
+.md-typeset .screenshot-link {
+  display: block;
+  margin: 1rem auto;
+}
+
+.md-typeset .screenshot-link img {
+  display: block;
+  width: 100%;
+  max-width: 700px;
+  margin: 0 auto;
+  border-radius: 0.2rem;
+  border: 1px solid var(--md-default-fg-color--lightest);
+  cursor: zoom-in;
+}
