@@ -1,0 +1,1565 @@
+
+<!doctype html>
+<html lang="zh-TW" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="PsychoPy Builder 建置音樂與語言判斷實驗的完整教學手冊">
+      
+      
+        <meta name="author" content="Jessy">
+      
+      
+      
+        <link rel="prev" href="..">
+      
+      
+        <link rel="next" href="../stage2/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>第一階段：純句子判斷核心 - PsychoPy 音樂 × 語言實驗建置手冊</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#psychopy-builder" class="md-skip">
+          跳轉到
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="頁首">
+    <a href=".." title="PsychoPy 音樂 × 語言實驗建置手冊" class="md-header__button md-logo" aria-label="PsychoPy 音樂 × 語言實驗建置手冊" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            PsychoPy 音樂 × 語言實驗建置手冊
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              第一階段：純句子判斷核心
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="切換至深色模式"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="切換至深色模式" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="切換至淺色模式"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="切換至淺色模式" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜尋" placeholder="搜尋" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="搜尋">
+        
+        <button type="reset" class="md-search__icon md-icon" title="清除" aria-label="清除" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜尋引擎
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/weilinglindachen/psychopy-manual" title="前往倉庫" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    weilinglindachen/psychopy-manual
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--integrated" aria-label="導覽列" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="PsychoPy 音樂 × 語言實驗建置手冊" class="md-nav__button md-logo" aria-label="PsychoPy 音樂 × 語言實驗建置手冊" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    PsychoPy 音樂 × 語言實驗建置手冊
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/weilinglindachen/psychopy-manual" title="前往倉庫" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    weilinglindachen/psychopy-manual
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    首頁
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第一階段：純句子判斷核心
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第一階段：純句子判斷核心
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+  
+
+<nav class="md-nav md-nav--secondary" aria-label="本頁內容">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      本頁內容
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#psychopy-builder" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        開始之前：認識 PsychoPy Builder
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-trial" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        任務 1：建立最小單一 trial
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        任務 2：建立四個測試句子的條件表
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-psychopy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        任務 3：讓 PsychoPy 自動讀取不同句子
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        任務 4：加入正確答案並自動記錄正確率
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        第一階段完成檢查表
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../stage2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第二階段：音樂與正式時間安排
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../stage3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第三階段：擴充成 48 trials
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../stage4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第四階段：完整受試者實驗
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../stage5/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第五階段：測試與正式定稿
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="_1">第一階段：完成純句子判斷核心<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
+<p><strong>任務 1–4</strong></p>
+<p>第一階段目標：</p>
+<div class="highlight"><pre><span></span><code>單一 trial
+→ Excel 條件表
+→ 自動呈現不同句子
+→ 自動判定正確率
+</code></pre></div>
+<p>完成後會得到一個可獨立運作的「純句子判斷小實驗」，能夠：</p>
+<ol>
+<li>顯示 fixation <code>+</code></li>
+<li>顯示英文句子</li>
+<li>接受 <code>f</code> 或 <code>j</code> 按鍵</li>
+<li>記錄反應鍵與 reaction time</li>
+<li>從 Excel 依序讀取四個不同句子</li>
+<li>比較受試者按鍵與正確答案</li>
+<li>在 CSV 中記錄每題答對或答錯</li>
+</ol>
+<hr />
+<h2 id="psychopy-builder">開始之前：認識 PsychoPy Builder<a class="headerlink" href="#psychopy-builder" title="Permanent link">&para;</a></h2>
+<p><strong>Builder</strong> 是 PsychoPy 提供的「不用寫程式」視覺化介面，開啟 PsychoPy 後預設會看到它：</p>
+<ul>
+<li>整個實驗是用一個個 <strong>Routine</strong>（例如 <code>trial</code>）組成</li>
+<li>每個 Routine 裡再放入不同的 <strong>component</strong>（文字、聲音、鍵盤反應等）</li>
+<li>畫面下方的 <strong>Flow</strong> 決定 Routine 的執行順序與重複次數（例如加上 Loop 重複讀取 Excel 的每一列）</li>
+</ul>
+<p><a class="screenshot-link" href="../assets/builder_terms.png" target="_blank"><img alt="PsychoPy Builder 畫面標示：Routine、Components、Flow 三大區塊" src="../assets/builder_terms.png" /></a></p>
+<p>在 Builder 右側的 Components 面板中，你會看到很多圖示，例如：</p>
+<p><a class="screenshot-link" href="../assets/comp.png" target="_blank"><img alt="PsychoPy Builder components：Slider、Image、Mouse、Text、Sound、Keyboard" src="../assets/comp.png" /></a></p>
+<p>簡單說明每一個的功能：</p>
+<table>
+<thead>
+<tr>
+<th>Component</th>
+<th>功能</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Slider</strong></td>
+<td>呈現一條可拖曳的量表（例如 Likert scale），讓受試者用滑鼠評分或評等。</td>
+</tr>
+<tr>
+<td><strong>Image</strong></td>
+<td>在畫面上顯示圖片檔案（例如 <code>.png</code>、<code>.jpg</code>）。</td>
+</tr>
+<tr>
+<td><strong>Mouse</strong></td>
+<td>記錄滑鼠點擊位置、點擊時間，或判斷是否點在特定區域內。</td>
+</tr>
+<tr>
+<td><strong>Text</strong></td>
+<td>在畫面上顯示文字，例如指導語、fixation <code>+</code>、句子或單字。</td>
+</tr>
+<tr>
+<td><strong>Sound</strong></td>
+<td>播放音檔（例如 <code>.wav</code>），可設定音量、開始/結束時間。</td>
+</tr>
+<tr>
+<td><strong>Keyboard</strong></td>
+<td>接收並記錄受試者的按鍵反應與 reaction time。</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition tip">
+<p class="admonition-title">這份手冊只會用到三個：Text、Sound、Keyboard</p>
+<ul>
+<li><strong>Text</strong>：顯示 fixation 與逐字呈現的句子（第一階段就會用到）</li>
+<li><strong>Keyboard</strong>：接收 <code>f/j</code> 反應並記錄 RT（第一階段就會用到）</li>
+<li><strong>Sound</strong>：播放五和弦音檔（第二階段才會用到）</li>
+</ul>
+<p>Slider、Image、Mouse 目前用不到，先不用理會，之後若實驗設計有變動再另外說明。</p>
+</div>
+<h2 id="1-trial">任務 1：建立最小單一 trial<a class="headerlink" href="#1-trial" title="Permanent link">&para;</a></h2>
+<h3 id="_2">目標<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
+<p>先建立一個能顯示 fixation、顯示固定句子、接受 <code>f/j</code>，並記錄反應時間的最小實驗。</p>
+<h3 id="1-builder">1. 建立並儲存 Builder 實驗<a class="headerlink" href="#1-builder" title="Permanent link">&para;</a></h3>
+<ol>
+<li>開啟 PsychoPy。</li>
+<li>確認目前在 <strong>Builder</strong> 畫面。</li>
+<li>建立新實驗。</li>
+<li>
+<p>儲存為：</p>
+<div class="highlight"><pre><span></span><code>practice01.psyexp
+</code></pre></div>
+</li>
+<li>
+<p>放進 <code>Jessy_psychopy</code> 資料夾。</p>
+</li>
+</ol>
+<details class="bug">
+<summary>遇到問題：之後找不到條件表</summary>
+<p>從一開始就把 <code>.psyexp</code> 放進正式專案資料夾。
+後面的 <code>conditions_test.xlsx</code> 也要放在相同位置，避免相對路徑錯誤。</p>
+</details>
+<h3 id="2-fixation">2. 加入 fixation<a class="headerlink" href="#2-fixation" title="Permanent link">&para;</a></h3>
+<p>在 <code>trial</code> Routine 中加入一個 <strong>Text</strong> component。</p>
+<table>
+<thead>
+<tr>
+<th>欄位</th>
+<th>內容</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Name</td>
+<td><code>fixation</code></td>
+</tr>
+<tr>
+<td>Start</td>
+<td><code>0.0</code></td>
+</tr>
+<tr>
+<td>Stop / Duration</td>
+<td><code>0.5</code></td>
+</tr>
+<tr>
+<td>Text</td>
+<td><code>+</code></td>
+</tr>
+</tbody>
+</table>
+<p>完成後按 <strong>OK</strong>。</p>
+<h3 id="3">3. 加入句子文字<a class="headerlink" href="#3" title="Permanent link">&para;</a></h3>
+<p>再加入一個 <strong>Text</strong> component。</p>
+<table>
+<thead>
+<tr>
+<th>欄位</th>
+<th>內容</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Name</td>
+<td><code>sentence_text</code></td>
+</tr>
+<tr>
+<td>Start</td>
+<td><code>0.5</code></td>
+</tr>
+<tr>
+<td>Stop / Duration</td>
+<td>留白</td>
+</tr>
+<tr>
+<td>Text</td>
+<td><code>The angry man often punches.</code></td>
+</tr>
+<tr>
+<td>Update</td>
+<td><code>constant</code></td>
+</tr>
+</tbody>
+</table>
+<p>完成後按 <strong>OK</strong>。</p>
+<div class="admonition warning">
+<p class="admonition-title">重要：Name 必須使用 <code>sentence_text</code></p>
+<p>後面的 Excel 會有一個欄位叫做 <code>sentence</code>，因此 Text component <strong>不可以</strong>也命名為 <code>sentence</code>。</p>
+<p>錯誤命名：</p>
+<div class="highlight"><pre><span></span><code>Text component = sentence
+Excel column = sentence
+</code></pre></div>
+<p>正確命名：</p>
+<div class="highlight"><pre><span></span><code>Text component = sentence_text
+Excel column = sentence
+</code></pre></div>
+<p>若兩者同名，執行時可能不會顯示英文句子，而是顯示一大串：</p>
+<div class="highlight"><pre><span></span><code>TextStim(...)
+</code></pre></div>
+</div>
+<h3 id="4">4. 加入鍵盤反應<a class="headerlink" href="#4" title="Permanent link">&para;</a></h3>
+<p>加入一個 <strong>Keyboard</strong> component。</p>
+<p><strong>Basic</strong></p>
+<table>
+<thead>
+<tr>
+<th>欄位</th>
+<th>內容</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Name</td>
+<td><code>sentence_response</code></td>
+</tr>
+<tr>
+<td>Start</td>
+<td><code>0.5</code></td>
+</tr>
+<tr>
+<td>Stop / Duration</td>
+<td>留白</td>
+</tr>
+<tr>
+<td>Allowed keys</td>
+<td><code>'f','j'</code></td>
+</tr>
+<tr>
+<td>Force end of Routine</td>
+<td>勾選</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Data</strong></p>
+<table>
+<thead>
+<tr>
+<th>欄位</th>
+<th>內容</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Store</td>
+<td><code>first key</code></td>
+</tr>
+<tr>
+<td>Store correct</td>
+<td>暫時不要勾</td>
+</tr>
+<tr>
+<td>Save onset/offset times</td>
+<td>保持勾選</td>
+</tr>
+<tr>
+<td>Sync timing with screen</td>
+<td>保持勾選</td>
+</tr>
+<tr>
+<td>Discard previous</td>
+<td>保持勾選</td>
+</tr>
+</tbody>
+</table>
+<p>完成後按 <strong>OK</strong>，再儲存實驗。</p>
+<details class="bug">
+<summary>遇到問題：按了其他鍵也有反應</summary>
+<p>檢查 <code>Allowed keys</code> 是否正確輸入：</p>
+<div class="highlight"><pre><span></span><code>&#39;f&#39;,&#39;j&#39;
+</code></pre></div>
+<p>並確認 <code>Force end of Routine</code> 已勾選。</p>
+</details>
+<h3 id="5-run">5. 第一次執行：先確認 Run 模式<a class="headerlink" href="#5-run" title="Permanent link">&para;</a></h3>
+<p>在 Builder 上方確認開關位於 <code>Run</code>（不要使用 <code>Pilot</code>），再點 Desktop 區域的綠色播放鍵。</p>
+<p>按下播放鍵後，PsychoPy 會先跳出一個小視窗，要求填寫：</p>
+<p><a class="screenshot-link" href="../assets/pilot.png" target="_blank"><img alt="PsychoPy 執行前跳出的 Participant 視窗，可填寫 participant 與 session" src="../assets/pilot.png" /></a></p>
+<ul>
+<li><strong>participant</strong>：受試者代號。測試階段可以固定填 <code>pilot</code>；正式收案時再改成每位受試者的編號（例如 <code>S01</code>），不要留空。</li>
+<li><strong>session</strong>：第幾次測試/收案。同一個 participant 重複測試時，建議每次遞增（<code>001</code>、<code>002</code>…），方便之後在 <code>data/</code> 資料夾分辨是哪一次跑的資料，避免混淆或覆蓋。</li>
+</ul>
+<p>這兩個欄位最後都會被寫進輸出的檔名與 CSV 裡的 <code>participant</code>、<code>session</code> 欄位。</p>
+<p>Participant 視窗可輸入：</p>
+<table>
+<thead>
+<tr>
+<th>欄位</th>
+<th>內容</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>participant</td>
+<td><code>pilot</code></td>
+</tr>
+<tr>
+<td>session</td>
+<td><code>001</code></td>
+</tr>
+</tbody>
+</table>
+<p>執行後應依序看到：</p>
+<ol>
+<li><code>+</code></li>
+<li>固定句子</li>
+<li>按 <code>f</code> 或 <code>j</code></li>
+<li>實驗結束</li>
+</ol>
+<details class="bug">
+<summary>遇到問題：畫面顯示元件資訊或測試文字</summary>
+<p>原因通常是目前位於 <code>Pilot</code> 模式。</p>
+<ol>
+<li>按 <code>Esc</code> 回到 Builder。</li>
+<li>將上方開關切到 <code>Run</code>。</li>
+<li>再按綠色播放鍵。</li>
+</ol>
+</details>
+<h3 id="6-macos">6. macOS 鍵盤權限<a class="headerlink" href="#6-macos" title="Permanent link">&para;</a></h3>
+<p>第一次執行時，macOS 可能出現：</p>
+<div class="highlight"><pre><span></span><code>PsychHID disabled due to macOS security restrictions
+</code></pre></div>
+<p>這不是 Builder 設定錯誤，而是 macOS 阻止 PsychoPy 讀取鍵盤。</p>
+<details class="bug">
+<summary>處理方式：開啟輸入監控權限</summary>
+<ol>
+<li>完整關閉 PsychoPy。</li>
+<li>
+<p>開啟：</p>
+<div class="highlight"><pre><span></span><code>系統設定 → 隱私權與安全性 → 輸入監控
+</code></pre></div>
+</li>
+<li>
+<p>找到 PsychoPy。</p>
+</li>
+<li>將 PsychoPy 開關關掉，再重新打開。</li>
+<li>若系統要求 Touch ID 或密碼，確認允許。</li>
+<li>關閉系統設定。</li>
+<li>重新啟動 PsychoPy。</li>
+</ol>
+<p><strong>注意：</strong> 修改權限後必須重新啟動 PsychoPy，否則新的權限可能尚未生效。</p>
+</details>
+<h3 id="7">7. 判斷是否正常完成<a class="headerlink" href="#7" title="Permanent link">&para;</a></h3>
+<p>Runner 視窗最後若顯示：</p>
+<div class="highlight"><pre><span></span><code>Experiment completed
+</code></pre></div>
+<p>代表實驗已正常結束。</p>
+<details class="bug">
+<summary>遇到橘色 dropped frames warning</summary>
+<p>若最後仍有 <code>Experiment completed</code>，目前任務 1 可先視為成功。
+dropped frames 之後在正式 timing 階段仍要檢查，但不影響現在測試鍵盤與句子功能。</p>
+</details>
+<h3 id="8">8. 檢查資料檔<a class="headerlink" href="#8" title="Permanent link">&para;</a></h3>
+<p>開啟 <code>Jessy_psychopy/data/</code>，找到最新的 <code>.csv</code>，確認包含：</p>
+<div class="highlight"><pre><span></span><code>sentence_response.keys
+sentence_response.rt
+</code></pre></div>
+<p>例如：</p>
+<table>
+<thead>
+<tr>
+<th>sentence_response.keys</th>
+<th style="text-align: right;">sentence_response.rt</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>j</td>
+<td style="text-align: right;">3.358</td>
+</tr>
+</tbody>
+</table>
+<p>代表受試者按了 <code>j</code>，並在句子出現後約 3.36 秒作答。</p>
+<details class="bug">
+<summary>遇到問題：資料夾裡檔案太多，不知道開哪一個</summary>
+<p>PsychoPy 可能同時產生 <code>.csv</code>、<code>.log</code>、<code>.psydat</code>。</p>
+<p>在 Finder 按 <code>Command + 2</code> 切換成列表顯示，再依「修改日期」找最新的 <code>.csv</code>。
+不要開 <code>.log</code> 或 <code>.psydat</code> 來檢查表格資料。</p>
+</details>
+<hr />
+<h2 id="2">任務 2：建立四個測試句子的條件表<a class="headerlink" href="#2" title="Permanent link">&para;</a></h2>
+<h3 id="_3">目標<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
+<p>建立一份小型 Excel 條件表，供 PsychoPy 讀取四個句子。</p>
+<h3 id="1">1. 建立欄位<a class="headerlink" href="#1" title="Permanent link">&para;</a></h3>
+<p>開啟 Excel 或 Numbers，在第一列輸入：</p>
+<table>
+<thead>
+<tr>
+<th>A1</th>
+<th>B1</th>
+<th>C1</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>trial_id</code></td>
+<td><code>sentence</code></td>
+<td><code>sentence_type</code></td>
+</tr>
+</tbody>
+</table>
+<p>注意：</p>
+<ul>
+<li>欄位名稱不要有空格。</li>
+<li><code>trial_id</code> 和 <code>sentence_type</code> 使用英文小寫。</li>
+<li><code>sentence</code> 必須和後面 <code>$sentence</code> 的拼法完全一致。</li>
+<li>PsychoPy 的 Text component 必須維持 <code>sentence_text</code>。</li>
+</ul>
+<details class="bug">
+<summary>遇到問題：之後 PsychoPy 找不到變數</summary>
+<p>最常見原因是欄位名稱拼法不一致，例如：</p>
+<div class="highlight"><pre><span></span><code>Sentence
+sentence text
+sentence_type 
+</code></pre></div>
+<p>建議直接使用：</p>
+<div class="highlight"><pre><span></span><code>trial_id
+sentence
+sentence_type
+</code></pre></div>
+</details>
+<h3 id="2_1">2. 輸入四列測試資料<a class="headerlink" href="#2_1" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>trial_id</th>
+<th>sentence</th>
+<th>sentence_type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>S01-C</td>
+<td>The angry man often punches.</td>
+<td>C</td>
+</tr>
+<tr>
+<td>S01-V</td>
+<td>The angry man often punch.</td>
+<td>V</td>
+</tr>
+<tr>
+<td>S02-C</td>
+<td>The angry men often punch.</td>
+<td>C</td>
+</tr>
+<tr>
+<td>S02-V</td>
+<td>The angry men often punches.</td>
+<td>V</td>
+</tr>
+</tbody>
+</table>
+<p>其中：<code>C</code> = correct sentence，<code>V</code> = syntactic violation。</p>
+<h3 id="3_1">3. 儲存條件表<a class="headerlink" href="#3_1" title="Permanent link">&para;</a></h3>
+<p>儲存或匯出為 <code>conditions_test.xlsx</code>，並與 <code>practice01.psyexp</code> 放在同一資料夾。</p>
+<details class="bug">
+<summary>遇到問題：檔案看起來是 Excel，但 PsychoPy 讀不到</summary>
+<p>檢查：</p>
+<ol>
+<li>副檔名確實是 <code>.xlsx</code>。</li>
+<li>不是 Numbers 原生格式。</li>
+<li>沒有儲存成 <code>conditions_test.xlsx.xlsx</code>。</li>
+<li>檔案與 <code>practice01.psyexp</code> 位於同一資料夾。</li>
+</ol>
+</details>
+<hr />
+<h2 id="3-psychopy">任務 3：讓 PsychoPy 自動讀取不同句子<a class="headerlink" href="#3-psychopy" title="Permanent link">&para;</a></h2>
+<h3 id="_4">目標<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
+<p>讓 <code>trial</code> Routine 重複四次，並依序讀取 Excel 的四列資料。</p>
+<h3 id="1-loop">1. 建立 Loop<a class="headerlink" href="#1-loop" title="Permanent link">&para;</a></h3>
+<p>在 Builder 下方的 <strong>Flow</strong> 區域：</p>
+<ol>
+<li>點 <code>Insert Loop</code>。</li>
+<li>點 <code>trial</code> 左側的位置作為 Loop 起點。</li>
+<li>點 <code>trial</code> 右側的位置作為 Loop 終點。</li>
+<li>開啟 Loop Properties。</li>
+</ol>
+<p>先建立空 Loop：</p>
+<table>
+<thead>
+<tr>
+<th>欄位</th>
+<th>內容</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Name</td>
+<td><code>trials</code></td>
+</tr>
+<tr>
+<td>Loop type</td>
+<td><code>sequential</code></td>
+</tr>
+<tr>
+<td>Is trials</td>
+<td>勾選</td>
+</tr>
+<tr>
+<td>Num. repeats</td>
+<td><code>1</code></td>
+</tr>
+<tr>
+<td>Conditions</td>
+<td>先留白</td>
+</tr>
+</tbody>
+</table>
+<p>先按 <strong>OK</strong> 建立 Loop。</p>
+<div class="admonition info">
+<p class="admonition-title">為什麼先建立空 Loop？</p>
+<p>某些情況下，第一次建立 Loop 時直接加入條件表，視窗可能暫時顯示找不到檔案。
+先完成空 Loop，再重新開啟加入 Conditions，通常較穩定。</p>
+</div>
+<h3 id="2_2">2. 加入條件表<a class="headerlink" href="#2_2" title="Permanent link">&para;</a></h3>
+<p>在 Flow 中雙擊灰色的 <code>trials</code>，設定：</p>
+<table>
+<thead>
+<tr>
+<th>欄位</th>
+<th>內容</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Conditions</td>
+<td><code>conditions_test.xlsx</code></td>
+</tr>
+</tbody>
+</table>
+<p>成功讀取後，視窗下方應顯示：</p>
+<div class="highlight"><pre><span></span><code>4 conditions, with 3 parameters
+[trial_id, sentence, sentence_type]
+</code></pre></div>
+<p>確認無誤後按 <strong>OK</strong>。</p>
+<details class="bug">
+<summary>遇到紅字：No file named conditions_test.xlsx</summary>
+<p>依序檢查：</p>
+<ol>
+<li><code>.psyexp</code> 與 <code>.xlsx</code> 是否在同一資料夾。</li>
+<li>點 Conditions 右側的資料夾圖示重新選取檔案。</li>
+<li>不要只手動輸入檔名。</li>
+<li>確認 Excel 已儲存。</li>
+</ol>
+<p>若檔案內容似乎已被讀到，但紅字仍不消失：</p>
+<ol>
+<li>清空 Conditions。</li>
+<li>按 <strong>OK</strong>。</li>
+<li>重新開啟 <code>trials Properties</code>。</li>
+<li>再透過資料夾圖示選取檔案。</li>
+</ol>
+</details>
+<h3 id="3_2">3. 把固定句子改成條件表變數<a class="headerlink" href="#3_2" title="Permanent link">&para;</a></h3>
+<p>雙擊 Text component <code>sentence_text</code>，設定：</p>
+<table>
+<thead>
+<tr>
+<th>欄位</th>
+<th>內容</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Name</td>
+<td><code>sentence_text</code></td>
+</tr>
+<tr>
+<td>Text</td>
+<td><code>$sentence</code></td>
+</tr>
+<tr>
+<td>Update</td>
+<td><code>set every repeat</code></td>
+</tr>
+</tbody>
+</table>
+<p>注意：</p>
+<ul>
+<li><code>$sentence</code> 必須與 Excel 欄位 <code>sentence</code> 完全一致。</li>
+<li><code>$</code> 表示這是變數，不是固定文字。</li>
+<li>Update 必須是 <code>set every repeat</code>。</li>
+</ul>
+<p>完成後按 <strong>OK</strong>，再儲存實驗。</p>
+<details class="bug">
+<summary>遇到紅色提示：變數應該更新</summary>
+<p>若 Update 仍為 <code>constant</code>，請改成 <code>set every repeat</code>。
+否則每一個 trial 可能不會更新為新的句子。</p>
+</details>
+<h3 id="4_1">4. 測試四個句子<a class="headerlink" href="#4_1" title="Permanent link">&para;</a></h3>
+<p>確認 Builder 上方為 <code>Run</code>，再點 Desktop 的綠色播放鍵。</p>
+<p>Participant 視窗可輸入（<code>session</code> 建議每次測試都遞增，方便區分資料）：</p>
+<table>
+<thead>
+<tr>
+<th>欄位</th>
+<th>內容</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>participant</td>
+<td><code>pilot</code></td>
+</tr>
+<tr>
+<td>session</td>
+<td><code>004</code></td>
+</tr>
+</tbody>
+</table>
+<p>測試時應依序出現：</p>
+<ol>
+<li>The angry man often punches.</li>
+<li>The angry man often punch.</li>
+<li>The angry men often punch.</li>
+<li>The angry men often punches.</li>
+</ol>
+<p>每看到一句就按 <code>f</code> 或 <code>j</code>。</p>
+<details class="bug">
+<summary>遇到問題：顯示一大串 TextStim(...)</summary>
+<p>回到 Builder，雙擊句子的 Text component，確認：</p>
+<div class="highlight"><pre><span></span><code>Name = sentence_text
+Text = $sentence
+</code></pre></div>
+<p>不能是 <code>Name = sentence</code>，因為元件名稱 <code>sentence</code> 會與 Excel 欄位 <code>sentence</code> 衝突。</p>
+</details>
+<details class="bug">
+<summary>遇到問題：只看到測試資訊，不是句子</summary>
+<p>檢查上方是否仍在 <code>Pilot</code>，並切換成 <code>Run</code>。</p>
+</details>
+<h3 id="5">5. 檢查輸出資料<a class="headerlink" href="#5" title="Permanent link">&para;</a></h3>
+<p>開啟最新的 <code>.csv</code>，確認有四列資料，並包含：</p>
+<div class="highlight"><pre><span></span><code>trial_id
+sentence
+sentence_type
+sentence_response.keys
+sentence_response.rt
+</code></pre></div>
+<details class="bug">
+<summary>遇到問題：看起來只有三列</summary>
+<p>先確認是否只是畫面沒有向下捲到底。第四列應為 <code>S02-V</code>。
+若確實只有三列，再確認實驗是否在第四題前被按 <code>Esc</code> 中止。</p>
+</details>
+<hr />
+<h2 id="4_2">任務 4：加入正確答案並自動記錄正確率<a class="headerlink" href="#4_2" title="Permanent link">&para;</a></h2>
+<h3 id="_5">目標<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
+<p>讓 PsychoPy 不只記錄受試者按了哪一個鍵，也能自動判斷每一題是否答對。</p>
+<p>本實驗採用固定按鍵對應：</p>
+<div class="highlight"><pre><span></span><code>F = Incorrect
+J = Correct
+</code></pre></div>
+<p>可將 <code>F</code> 聯想到 False，也可以用左右位置記憶：左側 F：Incorrect，右側 J：Correct。</p>
+<h3 id="1_1">1. 在條件表新增正確答案欄位<a class="headerlink" href="#1_1" title="Permanent link">&para;</a></h3>
+<p>開啟 <code>conditions_test.xlsx</code>，在第 4 欄加入 <code>correctAns</code>。</p>
+<p>完整條件表：</p>
+<table>
+<thead>
+<tr>
+<th>trial_id</th>
+<th>sentence</th>
+<th>sentence_type</th>
+<th>correctAns</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>S01-C</td>
+<td>The angry man often punches.</td>
+<td>C</td>
+<td>j</td>
+</tr>
+<tr>
+<td>S01-V</td>
+<td>The angry man often punch.</td>
+<td>V</td>
+<td>f</td>
+</tr>
+<tr>
+<td>S02-C</td>
+<td>The angry men often punch.</td>
+<td>C</td>
+<td>j</td>
+</tr>
+<tr>
+<td>S02-V</td>
+<td>The angry men often punches.</td>
+<td>V</td>
+<td>f</td>
+</tr>
+</tbody>
+</table>
+<p>規則：</p>
+<ul>
+<li><code>C</code> 句為正確句，因此正確按鍵是 <code>j</code></li>
+<li><code>V</code> 句為違反句，因此正確按鍵是 <code>f</code></li>
+<li><code>f</code>、<code>j</code> 使用小寫</li>
+<li>欄位名稱 <code>correctAns</code> 的大小寫必須完全一致</li>
+</ul>
+<p>儲存後，關閉 Excel 或 Numbers。</p>
+<div class="admonition info">
+<p class="admonition-title">為什麼要關閉 Excel／Numbers？</p>
+<p>PsychoPy 有時仍會保留先前讀取的舊版條件表。
+關閉試算表程式後，再讓 Loop 重新讀取，可避免只看到舊的 3 parameters。</p>
+</div>
+<h3 id="2-loop">2. 讓 Loop 重新讀取條件表<a class="headerlink" href="#2-loop" title="Permanent link">&para;</a></h3>
+<p>雙擊 Flow 中灰色的 <code>trials</code>，確認下方顯示：</p>
+<div class="highlight"><pre><span></span><code>4 conditions, with 4 parameters
+[trial_id, sentence, sentence_type, correctAns]
+</code></pre></div>
+<p>只有看到 <code>4 parameters</code> 才能進入下一步。</p>
+<details class="bug">
+<summary>遇到問題：仍然只有 3 parameters</summary>
+<p>代表 PsychoPy 尚未重新載入新增的 <code>correctAns</code>。可以先試試看：</p>
+<ul>
+<li>點 Conditions 欄位右側的<strong>綠色箭頭</strong>（重新整理／reload 圖示），嘗試直接重新讀取一次條件表。</li>
+</ul>
+<p>如果綠色箭頭沒有用，再依序處理：</p>
+<ol>
+<li>確認 Excel／Numbers 已儲存並關閉。</li>
+<li>關閉再重新開啟 <code>trials Properties</code>。</li>
+<li>點 Conditions 右側的資料夾圖示。</li>
+<li>重新選取 <code>conditions_test.xlsx</code>。</li>
+<li>確認最後出現 <code>correctAns</code>。</li>
+</ol>
+</details>
+<h3 id="3-keyboard-component">3. 設定 Keyboard component<a class="headerlink" href="#3-keyboard-component" title="Permanent link">&para;</a></h3>
+<p>雙擊 <code>sentence_response</code>，進入 <strong>Data</strong> 分頁，設定：</p>
+<table>
+<thead>
+<tr>
+<th>欄位</th>
+<th>設定</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Store</td>
+<td><code>first key</code></td>
+</tr>
+<tr>
+<td>Store correct</td>
+<td>勾選</td>
+</tr>
+<tr>
+<td>Correct answer</td>
+<td><code>$correctAns</code></td>
+</tr>
+<tr>
+<td>Save onset/offset times</td>
+<td>勾選</td>
+</tr>
+<tr>
+<td>Sync timing with screen</td>
+<td>勾選</td>
+</tr>
+<tr>
+<td>Discard previous</td>
+<td>勾選</td>
+</tr>
+</tbody>
+</table>
+<p>完成後按 <strong>OK</strong>，再儲存實驗。</p>
+<details class="bug">
+<summary>遇到紅色提示：correctAns should be set to update</summary>
+<p>PsychoPy 2026.1.x 中，<code>Correct answer</code> 欄位可能持續顯示：</p>
+<div class="highlight"><pre><span></span><code>Looks like your variable &#39;correctAns&#39; in &#39;Correct answer&#39;
+should be set to update.
+</code></pre></div>
+<p>這個欄位沒有另外可選的 update 選單，因此不要只用這條紅色提示判定失敗。</p>
+<p>先確認 Loop 已顯示 <code>4 conditions, with 4 parameters [trial_id, sentence, sentence_type, correctAns]</code>，
+最後再以 CSV 中的 <code>sentence_response.corr</code> 驗證功能。</p>
+</details>
+<h3 id="4_3">4. 設計可驗證正確與錯誤的測試<a class="headerlink" href="#4_3" title="Permanent link">&para;</a></h3>
+<p>不要四題都故意答對，否則無法確認 <code>0</code> 是否能正常產生。</p>
+<p>建議測試：</p>
+<table>
+<thead>
+<tr>
+<th>題目</th>
+<th>正確答案</th>
+<th>測試按鍵</th>
+<th style="text-align: right;">預期 corr</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>S01-C</td>
+<td>j</td>
+<td>j</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr>
+<td>S01-V</td>
+<td>f</td>
+<td>f</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr>
+<td>S02-C</td>
+<td>j</td>
+<td>f</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr>
+<td>S02-V</td>
+<td>f</td>
+<td>j</td>
+<td style="text-align: right;">0</td>
+</tr>
+</tbody>
+</table>
+<p>Participant 視窗可輸入（<code>session</code> 記得遞增，跟前面幾次測試分開）：</p>
+<div class="highlight"><pre><span></span><code>participant = pilot
+session = 005
+</code></pre></div>
+<p>依序按：</p>
+<div class="highlight"><pre><span></span><code>j
+f
+f
+j
+</code></pre></div>
+<h3 id="5-csv">5. 檢查 CSV 的正確率<a class="headerlink" href="#5-csv" title="Permanent link">&para;</a></h3>
+<p>開啟最新的 <code>.csv</code>，確認以下欄位：</p>
+<div class="highlight"><pre><span></span><code>trial_id
+sentence
+sentence_type
+correctAns
+sentence_response.keys
+sentence_response.corr
+sentence_response.rt
+</code></pre></div>
+<p>正確結果：</p>
+<table>
+<thead>
+<tr>
+<th>trial_id</th>
+<th>correctAns</th>
+<th>sentence_response.keys</th>
+<th style="text-align: right;">sentence_response.corr</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>S01-C</td>
+<td>j</td>
+<td>j</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr>
+<td>S01-V</td>
+<td>f</td>
+<td>f</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr>
+<td>S02-C</td>
+<td>j</td>
+<td>f</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr>
+<td>S02-V</td>
+<td>f</td>
+<td>j</td>
+<td style="text-align: right;">0</td>
+</tr>
+</tbody>
+</table>
+<p>其中 <code>1</code> = 答對，<code>0</code> = 答錯。</p>
+<details class="bug">
+<summary>遇到問題：找不到剛剛的 CSV</summary>
+<ol>
+<li>在 Finder 按 <code>Command + 2</code>，切換成列表顯示。</li>
+<li>依「修改日期」排序。</li>
+<li>找最接近剛才測試時間的 <code>.csv</code>。</li>
+<li>不要選 <code>.log</code> 或 <code>.psydat</code>。</li>
+</ol>
+</details>
+<details class="bug">
+<summary>遇到問題：corr 全部是空白</summary>
+<p>檢查：</p>
+<ol>
+<li><code>Store correct</code> 是否已勾選。</li>
+<li><code>Correct answer</code> 是否為 <code>$correctAns</code>。</li>
+<li>Loop 是否顯示 4 parameters。</li>
+<li>Excel 中 <code>correctAns</code> 是否確實填入小寫 <code>f</code> 或 <code>j</code>。</li>
+</ol>
+</details>
+<details class="bug">
+<summary>遇到問題：corr 與預期相反</summary>
+<p>檢查按鍵規則是否一致：</p>
+<div class="highlight"><pre><span></span><code>f = Incorrect
+j = Correct
+</code></pre></div>
+<p>因此：<code>C → j</code>，<code>V → f</code>。</p>
+</details>
+<hr />
+<h2 id="_6">第一階段完成檢查表<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
+<ul>
+<li>[ ] 任務 1：建立最小單一 trial</li>
+<li>[ ] 任務 2：建立四個測試句子的條件表</li>
+<li>[ ] 任務 3：讓 PsychoPy 自動讀取不同句子</li>
+<li>[ ] 任務 4：讓 PsychoPy 自動記錄正確率</li>
+</ul>
+<p>完成第一階段後，實驗已能：</p>
+<ul>
+<li>顯示 fixation</li>
+<li>從 Excel 讀取不同句子</li>
+<li>接受 <code>f/j</code></li>
+<li>記錄按鍵</li>
+<li>記錄 reaction time</li>
+<li>自動判定正確率</li>
+<li>將條件與反應寫入 CSV</li>
+</ul>
+<p>➡️ 接下來進入 <a href="../stage2/">第二階段：加入音樂與正式時間安排</a>。</p>
+
+
+
+
+
+
+
+  
+    
+  
+  
+
+
+  <aside class="md-source-file">
+    
+      
+  <span class="md-source-file__fact">
+    <span class="md-icon" title="最後更新">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
+    </span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime" title="2026年8月9日 00:33:05 CST">2026年8月9日 00:33:05</span>
+  </span>
+
+    
+    
+    
+    
+  </aside>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  回到頂端
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="頁腳" >
+        
+          
+          <a href=".." class="md-footer__link md-footer__link--prev" aria-label="上一頁: 首頁">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                上一頁
+              </span>
+              <div class="md-ellipsis">
+                首頁
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../stage2/" class="md-footer__link md-footer__link--next" aria-label="下一頁: 第二階段：音樂與正式時間安排">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                下一頁
+              </span>
+              <div class="md-ellipsis">
+                第二階段：音樂與正式時間安排
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.expand", "navigation.top", "navigation.footer", "navigation.indexes", "toc.integrate", "search.suggest", "search.highlight", "content.code.copy", "content.tabs.link"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u8907\u88fd", "clipboard.copy": "\u8907\u88fd", "search.result.more.one": "\u6b64\u9801\u5c1a\u6709 1 \u500b\u7b26\u5408\u7684\u9805\u76ee", "search.result.more.other": "\u6b64\u9801\u5c1a\u6709 # \u500b\u7b26\u5408\u7684\u9805\u76ee", "search.result.none": "\u6c92\u6709\u7b26\u5408\u7684\u9805\u76ee", "search.result.one": "\u627e\u5230 1 \u500b\u7b26\u5408\u7684\u9805\u76ee", "search.result.other": "\u627e\u5230 # \u500b\u7b26\u5408\u7684\u9805\u76ee", "search.result.placeholder": "\u6253\u5b57\u9032\u884c\u641c\u5c0b", "search.result.term.missing": "\u7f3a\u5c11\u5b57\u8a5e", "select.version": "\u9078\u64c7\u7248\u672c"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+    
+  </body>
+</html>
