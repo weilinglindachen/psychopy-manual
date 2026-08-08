@@ -23,7 +23,9 @@
 
 ---
 
-## 開始之前：認識 PsychoPy Builder
+## 開始之前：認識 PsychoPy
+
+### Builder
 
 **Builder** 是 PsychoPy 提供的「不用寫程式」視覺化介面，開啟 PsychoPy 後預設會看到它：
 
@@ -54,6 +56,17 @@
     - **Sound**：播放五和弦音檔（第二階段才會用到）
 
     Slider、Image、Mouse 目前用不到，先不用理會，之後若實驗設計有變動再另外說明。
+
+### Runner
+
+**Runner** 是 PsychoPy 用來實際執行實驗、顯示執行紀錄的視窗。在 Builder 按下綠色播放鍵後，PsychoPy 會自動切換到 Runner 畫面並開始執行。
+
+[![PsychoPy Runner 視窗，顯示 Desktop/Browser/Pavlovia 執行選項與 Stdout 執行紀錄](assets/runner.png)](assets/runner.png){: .screenshot-link target="_blank" }
+
+- 上方的 **Pilot / Run** 切換開關：決定用哪種模式執行
+- **Desktop**：在本機視窗中執行實驗（這份手冊主要使用這個）
+- **Browser**／**Pavlovia**：透過瀏覽器或線上平台執行，目前不會用到
+- 下方的 **Stdout** 分頁：顯示實驗執行過程的完整記錄，包含警告訊息（例如 dropped frames）以及最後是否出現 `Experiment completed`
 
 ## 任務 1：建立最小單一 trial
 
