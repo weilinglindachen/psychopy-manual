@@ -403,7 +403,12 @@ sentence_response.rt
 
 ### 3. 把固定句子改成條件表變數
 
-雙擊 Text component `sentence_text`，設定：
+回到 `trial` Routine，找到任務 1 已經建立好的 Text component `sentence_text`，直接**雙擊它**進行修改：
+
+!!! warning "不要新增新的 Text component"
+    這裡是修改既有的 `sentence_text`，不是加入另一個 Text component。畫面上應該只會有一個負責顯示句子的 Text component。
+
+設定：
 
 | 欄位 | 內容 |
 |---|---|
