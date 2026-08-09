@@ -92,12 +92,12 @@ audio/test_irregular_3600ms.wav
 | Start | `0.0`（初次技術測試） |
 | Stop / Duration | 留白 |
 | Sound | `audio/test_regular_3600ms.wav` |
-| Volume | `1` |
 
 Playback 分頁：
 
 | 選項 | 設定 |
 |---|---|
+| Volume | `1` |
 | Hamming window | 勾選 |
 | Stop with Routine | 勾選 |
 | Force end of Routine | 不勾選 |
