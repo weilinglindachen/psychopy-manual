@@ -432,12 +432,7 @@ sentence_response.rt
 
 確認 Builder 上方為 `Run`，再點 Desktop 的綠色播放鍵。
 
-Participant 視窗可輸入（`session` 建議每次測試都遞增，方便區分資料）：
-
-| 欄位 | 內容 |
-|---|---|
-| participant | `pilot` |
-| session | `004` |
+Participant 視窗跳出時，`session` 記得每次測試都遞增，方便區分資料。
 
 測試時應依序出現：
 
