@@ -23,3 +23,25 @@
   border: 1px solid var(--md-default-fg-color--lightest);
   cursor: zoom-in;
 }
+
+/* 長表格（例如完整 48-trial 條件表）用固定高度捲動框呈現，
+   避免一次把整頁撐得很長；標題列固定在頂端方便對照欄位。 */
+.md-typeset .scrollable-table {
+  max-height: 420px;
+  overflow-y: auto;
+  overflow-x: auto;
+  margin: 1rem 0;
+  border: 1px solid var(--md-default-fg-color--lightest);
+  border-radius: 0.2rem;
+}
+
+.md-typeset .scrollable-table table {
+  margin: 0;
+}
+
+.md-typeset .scrollable-table table th {
+  position: sticky;
+  top: 0;
+  background-color: var(--md-default-bg-color);
+  z-index: 1;
+}

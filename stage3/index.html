@@ -80,7 +80,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#_1" class="md-skip">
+        <a href="#9-48-trial" class="md-skip">
           跳轉到
         </a>
       
@@ -381,10 +381,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
+  <a href="#9-48-trial" class="md-nav__link">
     <span class="md-ellipsis">
       
-        預計完成
+        任務 9：建立完整 48-trial 條件表
       
     </span>
   </a>
@@ -392,10 +392,32 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
+  <a href="#10" class="md-nav__link">
     <span class="md-ellipsis">
       
-        四種主要條件
+        任務 10：檢查四種條件是否平衡
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#11-trial" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        任務 11：設定 trial 呈現順序
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        第三階段完成檢查表
       
     </span>
   </a>
@@ -483,44 +505,1316 @@
 
 <h1 id="48-trials">第三階段：擴充成完整 48 trials<a class="headerlink" href="#48-trials" title="Permanent link">&para;</a></h1>
 <p><strong>任務 9–11</strong></p>
-<div class="admonition info">
-<p class="admonition-title">尚未開始</p>
-<p>這個階段的內容還在準備中，完成後會補上詳細操作步驟與除錯說明，格式與 <a href="../stage1/">第一階段</a>、<a href="../stage2/">第二階段</a> 相同。</p>
+<p>第三階段將 4-trial 迷你實驗擴充成正式的 48-trial 完整實驗：</p>
+<div class="highlight"><pre><span></span><code>建立完整 48-trial 條件表
+→ 檢查四種條件（C+R、C+I、V+R、V+I）是否平衡
+→ 設定固定的 pseudorandom trial 呈現順序
+</code></pre></div>
+<p>完成後會得到條件平衡、順序固定的正式 48-trial 版本。</p>
+<hr />
+<h2 id="9-48-trial">任務 9：建立完整 48-trial 條件表<a class="headerlink" href="#9-48-trial" title="Permanent link">&para;</a></h2>
+<h3 id="1">1. 建立正式條件檔<a class="headerlink" href="#1" title="Permanent link">&para;</a></h3>
+<p>把原本成功運作的 <code>conditions_test.xlsx</code> 複製一份，重新命名為 <code>conditions_formal.xlsx</code>。</p>
+<div class="admonition warning">
+<p class="admonition-title">保留 conditions_test.xlsx</p>
+<p>請保留 <code>conditions_test.xlsx</code>，不要直接覆蓋，之後仍可能需要回頭比對測試版本。</p>
 </div>
-<h2 id="_1">預計完成<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
-<ul>
-<li>[ ] 任務 9：建立完整 48-trial 條件表</li>
-<li>[ ] 任務 10：檢查四種條件是否平衡</li>
-<li>[ ] 任務 11：設定 trial 呈現順序</li>
-</ul>
-<h2 id="_2">四種主要條件<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<h3 id="2">2. 設定正式欄位<a class="headerlink" href="#2" title="Permanent link">&para;</a></h3>
+<p>正式條件表使用 A–M 共 13 欄，比第二階段多了 <code>item_id</code>、<code>music_type</code>、<code>music_pair</code> 三個新欄位：</p>
 <table>
 <thead>
 <tr>
-<th>音樂條件</th>
-<th>句子條件</th>
+<th>A</th>
+<th>B</th>
+<th>C</th>
+<th>D</th>
+<th>E</th>
+<th>F</th>
+<th>G</th>
+<th>H</th>
+<th>I</th>
+<th>J</th>
+<th>K</th>
+<th>L</th>
+<th>M</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>Regular</td>
-<td>Correct</td>
-</tr>
-<tr>
-<td>Regular</td>
-<td>Violation</td>
-</tr>
-<tr>
-<td>Irregular</td>
-<td>Correct</td>
-</tr>
-<tr>
-<td>Irregular</td>
-<td>Violation</td>
+<td><code>trial_id</code></td>
+<td><code>item_id</code></td>
+<td><code>sentence</code></td>
+<td><code>sentence_type</code></td>
+<td><code>correctAns</code></td>
+<td><code>music_type</code></td>
+<td><code>music_pair</code></td>
+<td><code>audio_file</code></td>
+<td><code>word1</code></td>
+<td><code>word2</code></td>
+<td><code>word3</code></td>
+<td><code>word4</code></td>
+<td><code>word5</code></td>
 </tr>
 </tbody>
 </table>
-<p>完成後會得到條件平衡的正式刺激版本。</p>
+<h3 id="3-4-trials">3. 先用原本 4 trials 測試新欄位<a class="headerlink" href="#3-4-trials" title="Permanent link">&para;</a></h3>
+<p>新欄位可先只填測試資料，確認格式沒問題：</p>
+<table>
+<thead>
+<tr>
+<th><code>trial_id</code></th>
+<th><code>item_id</code></th>
+<th><code>music_type</code></th>
+<th><code>music_pair</code></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>S01-C</td>
+<td>S01</td>
+<td>R</td>
+<td>test</td>
+</tr>
+<tr>
+<td>S01-V</td>
+<td>S01</td>
+<td>I</td>
+<td>test</td>
+</tr>
+<tr>
+<td>S02-C</td>
+<td>S02</td>
+<td>I</td>
+<td>test</td>
+</tr>
+<tr>
+<td>S02-V</td>
+<td>S02</td>
+<td>R</td>
+<td>test</td>
+</tr>
+</tbody>
+</table>
+<p>其他欄位先不改。</p>
+<h3 id="4-psychopy">4. 讓 PsychoPy 重新讀取正式條件表<a class="headerlink" href="#4-psychopy" title="Permanent link">&para;</a></h3>
+<p>在 Flow 中雙擊灰色的 <code>trials</code> Loop，把 Conditions 從 <code>conditions_test.xlsx</code> 改成 <code>conditions_formal.xlsx</code>。</p>
+<p>成功載入後應看到：</p>
+<div class="highlight"><pre><span></span><code>4 conditions, with 13 parameters
+</code></pre></div>
+<details class="bug">
+<summary>遇到問題：已修改 Excel，但 Loop 看不到新欄位</summary>
+<p>PsychoPy 可能仍使用先前讀入的欄位資訊。可以先點 Conditions 欄位右側的<strong>綠色箭頭</strong>重新讀取一次；沒有用的話，再重新選取一次 conditions file。</p>
+</details>
+<h3 id="5-4-trial-regression-test">5. 做 4-trial regression test<a class="headerlink" href="#5-4-trial-regression-test" title="Permanent link">&para;</a></h3>
+<p>確認 Builder 上方為 <code>Run</code>，完整跑一次 4 trials，逐一確認以下功能仍正常：</p>
+<ul>
+<li>500 ms fixation</li>
+<li>音樂正常播放</li>
+<li>5 個 words 正常依序出現</li>
+<li>word/chord 同步沒有明顯異常</li>
+<li>第五個 word/chord onset 後可按 <code>f</code>/<code>j</code></li>
+<li>音樂不會因為按鍵而被截斷</li>
+<li>4 題都能完整跑完</li>
+<li>沒有 error</li>
+</ul>
+<p>若全部成功，再開始擴充正式 48 trials。</p>
+<h3 id="6-48-trial">6. 建立 48-trial 骨架<a class="headerlink" href="#6-48-trial" title="Permanent link">&para;</a></h3>
+<p>正式實驗包含 24 個 base items，每個 item 有 C（Correct）/ V（Violation）兩版，共 48 trials：</p>
+<table>
+<thead>
+<tr>
+<th>規則</th>
+<th>說明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>item_id</code></td>
+<td>每個出現兩次（C 與 V）</td>
+</tr>
+<tr>
+<td>C</td>
+<td><code>sentence_type = C</code>，<code>correctAns = j</code></td>
+</tr>
+<tr>
+<td>V</td>
+<td><code>sentence_type = V</code>，<code>correctAns = f</code></td>
+</tr>
+</tbody>
+</table>
+<p>完整 48-trial 骨架如下：</p>
+<div class="scrollable-table">
+<table>
+<thead>
+<tr>
+<th>A <code>trial_id</code></th>
+<th>B <code>item_id</code></th>
+<th>D <code>sentence_type</code></th>
+<th>E <code>correctAns</code></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>S01-C</td>
+<td>S01</td>
+<td>C</td>
+<td>j</td>
+</tr>
+<tr>
+<td>S01-V</td>
+<td>S01</td>
+<td>V</td>
+<td>f</td>
+</tr>
+<tr>
+<td>S02-C</td>
+<td>S02</td>
+<td>C</td>
+<td>j</td>
+</tr>
+<tr>
+<td>S02-V</td>
+<td>S02</td>
+<td>V</td>
+<td>f</td>
+</tr>
+<tr>
+<td>S03-C</td>
+<td>S03</td>
+<td>C</td>
+<td>j</td>
+</tr>
+<tr>
+<td>S03-V</td>
+<td>S03</td>
+<td>V</td>
+<td>f</td>
+</tr>
+<tr>
+<td>S04-C</td>
+<td>S04</td>
+<td>C</td>
+<td>j</td>
+</tr>
+<tr>
+<td>S04-V</td>
+<td>S04</td>
+<td>V</td>
+<td>f</td>
+</tr>
+<tr>
+<td>S05-C</td>
+<td>S05</td>
+<td>C</td>
+<td>j</td>
+</tr>
+<tr>
+<td>S05-V</td>
+<td>S05</td>
+<td>V</td>
+<td>f</td>
+</tr>
+<tr>
+<td>S06-C</td>
+<td>S06</td>
+<td>C</td>
+<td>j</td>
+</tr>
+<tr>
+<td>S06-V</td>
+<td>S06</td>
+<td>V</td>
+<td>f</td>
+</tr>
+<tr>
+<td>S07-C</td>
+<td>S07</td>
+<td>C</td>
+<td>j</td>
+</tr>
+<tr>
+<td>S07-V</td>
+<td>S07</td>
+<td>V</td>
+<td>f</td>
+</tr>
+<tr>
+<td>S08-C</td>
+<td>S08</td>
+<td>C</td>
+<td>j</td>
+</tr>
+<tr>
+<td>S08-V</td>
+<td>S08</td>
+<td>V</td>
+<td>f</td>
+</tr>
+<tr>
+<td>S09-C</td>
+<td>S09</td>
+<td>C</td>
+<td>j</td>
+</tr>
+<tr>
+<td>S09-V</td>
+<td>S09</td>
+<td>V</td>
+<td>f</td>
+</tr>
+<tr>
+<td>S10-C</td>
+<td>S10</td>
+<td>C</td>
+<td>j</td>
+</tr>
+<tr>
+<td>S10-V</td>
+<td>S10</td>
+<td>V</td>
+<td>f</td>
+</tr>
+<tr>
+<td>S11-C</td>
+<td>S11</td>
+<td>C</td>
+<td>j</td>
+</tr>
+<tr>
+<td>S11-V</td>
+<td>S11</td>
+<td>V</td>
+<td>f</td>
+</tr>
+<tr>
+<td>S12-C</td>
+<td>S12</td>
+<td>C</td>
+<td>j</td>
+</tr>
+<tr>
+<td>S12-V</td>
+<td>S12</td>
+<td>V</td>
+<td>f</td>
+</tr>
+<tr>
+<td>S13-C</td>
+<td>S13</td>
+<td>C</td>
+<td>j</td>
+</tr>
+<tr>
+<td>S13-V</td>
+<td>S13</td>
+<td>V</td>
+<td>f</td>
+</tr>
+<tr>
+<td>S14-C</td>
+<td>S14</td>
+<td>C</td>
+<td>j</td>
+</tr>
+<tr>
+<td>S14-V</td>
+<td>S14</td>
+<td>V</td>
+<td>f</td>
+</tr>
+<tr>
+<td>S15-C</td>
+<td>S15</td>
+<td>C</td>
+<td>j</td>
+</tr>
+<tr>
+<td>S15-V</td>
+<td>S15</td>
+<td>V</td>
+<td>f</td>
+</tr>
+<tr>
+<td>S16-C</td>
+<td>S16</td>
+<td>C</td>
+<td>j</td>
+</tr>
+<tr>
+<td>S16-V</td>
+<td>S16</td>
+<td>V</td>
+<td>f</td>
+</tr>
+<tr>
+<td>S17-C</td>
+<td>S17</td>
+<td>C</td>
+<td>j</td>
+</tr>
+<tr>
+<td>S17-V</td>
+<td>S17</td>
+<td>V</td>
+<td>f</td>
+</tr>
+<tr>
+<td>S18-C</td>
+<td>S18</td>
+<td>C</td>
+<td>j</td>
+</tr>
+<tr>
+<td>S18-V</td>
+<td>S18</td>
+<td>V</td>
+<td>f</td>
+</tr>
+<tr>
+<td>S19-C</td>
+<td>S19</td>
+<td>C</td>
+<td>j</td>
+</tr>
+<tr>
+<td>S19-V</td>
+<td>S19</td>
+<td>V</td>
+<td>f</td>
+</tr>
+<tr>
+<td>S20-C</td>
+<td>S20</td>
+<td>C</td>
+<td>j</td>
+</tr>
+<tr>
+<td>S20-V</td>
+<td>S20</td>
+<td>V</td>
+<td>f</td>
+</tr>
+<tr>
+<td>S21-C</td>
+<td>S21</td>
+<td>C</td>
+<td>j</td>
+</tr>
+<tr>
+<td>S21-V</td>
+<td>S21</td>
+<td>V</td>
+<td>f</td>
+</tr>
+<tr>
+<td>S22-C</td>
+<td>S22</td>
+<td>C</td>
+<td>j</td>
+</tr>
+<tr>
+<td>S22-V</td>
+<td>S22</td>
+<td>V</td>
+<td>f</td>
+</tr>
+<tr>
+<td>S23-C</td>
+<td>S23</td>
+<td>C</td>
+<td>j</td>
+</tr>
+<tr>
+<td>S23-V</td>
+<td>S23</td>
+<td>V</td>
+<td>f</td>
+</tr>
+<tr>
+<td>S24-C</td>
+<td>S24</td>
+<td>C</td>
+<td>j</td>
+</tr>
+<tr>
+<td>S24-V</td>
+<td>S24</td>
+<td>V</td>
+<td>f</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>完成後應有：標題列 + 48 trials = 共 49 列。</p>
+<h3 id="7-words">7. 填入完整句子與五個 words<a class="headerlink" href="#7-words" title="Permanent link">&para;</a></h3>
+<p>填入 C <code>sentence</code> 與 I–M 欄的 <code>word1</code>–<code>word5</code>：</p>
+<table>
+<thead>
+<tr>
+<th>A <code>trial_id</code></th>
+<th>C <code>sentence</code></th>
+<th>I <code>word1</code></th>
+<th>J <code>word2</code></th>
+<th>K <code>word3</code></th>
+<th>L <code>word4</code></th>
+<th>M <code>word5</code></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>S01-C</td>
+<td>The pretty woman often laughs.</td>
+<td>The</td>
+<td>pretty</td>
+<td>woman</td>
+<td>often</td>
+<td>laughs.</td>
+</tr>
+<tr>
+<td>S01-V</td>
+<td>The pretty woman often laugh.</td>
+<td>The</td>
+<td>pretty</td>
+<td>woman</td>
+<td>often</td>
+<td>laugh.</td>
+</tr>
+</tbody>
+</table>
+<p>依此完成 S01-C 到 S24-V。</p>
+<div class="admonition warning">
+<p class="admonition-title">填完句子後務必檢查</p>
+<ul>
+<li>每句都剛好 5 個 words</li>
+<li><code>sentence</code> 與 <code>word1</code>–<code>word5</code> 完全一致</li>
+<li>第五個 word 是 critical word</li>
+<li>C/V 只操弄 subject–verb agreement</li>
+</ul>
+</div>
+<h3 id="8">8. 填入正式音樂資訊<a class="headerlink" href="#8" title="Permanent link">&para;</a></h3>
+<p>正式音樂共有 12 組 music pairs（<code>M01</code>–<code>M12</code>），每組各有 Regular（R）/ Irregular（I）兩個版本，共 24 個正式 <code>.wav</code> 音檔，檔名為 <code>M01-R.wav</code>、<code>M01-I.wav</code>……<code>M12-R.wav</code>、<code>M12-I.wav</code>。</p>
+<p>依下表填 F <code>music_type</code>、G <code>music_pair</code>、H <code>audio_file</code>：</p>
+<div class="scrollable-table">
+<table>
+<thead>
+<tr>
+<th>A <code>trial_id</code></th>
+<th>D <code>sentence_type</code></th>
+<th>F <code>music_type</code></th>
+<th>G <code>music_pair</code></th>
+<th>H <code>audio_file</code></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>S01-C</td>
+<td>C</td>
+<td>R</td>
+<td>M01</td>
+<td><code>audio/M01-R.wav</code></td>
+</tr>
+<tr>
+<td>S01-V</td>
+<td>V</td>
+<td>I</td>
+<td>M01</td>
+<td><code>audio/M01-I.wav</code></td>
+</tr>
+<tr>
+<td>S02-C</td>
+<td>C</td>
+<td>I</td>
+<td>M01</td>
+<td><code>audio/M01-I.wav</code></td>
+</tr>
+<tr>
+<td>S02-V</td>
+<td>V</td>
+<td>R</td>
+<td>M01</td>
+<td><code>audio/M01-R.wav</code></td>
+</tr>
+<tr>
+<td>S03-C</td>
+<td>C</td>
+<td>R</td>
+<td>M02</td>
+<td><code>audio/M02-R.wav</code></td>
+</tr>
+<tr>
+<td>S03-V</td>
+<td>V</td>
+<td>I</td>
+<td>M02</td>
+<td><code>audio/M02-I.wav</code></td>
+</tr>
+<tr>
+<td>S04-C</td>
+<td>C</td>
+<td>I</td>
+<td>M02</td>
+<td><code>audio/M02-I.wav</code></td>
+</tr>
+<tr>
+<td>S04-V</td>
+<td>V</td>
+<td>R</td>
+<td>M02</td>
+<td><code>audio/M02-R.wav</code></td>
+</tr>
+<tr>
+<td>S05-C</td>
+<td>C</td>
+<td>R</td>
+<td>M03</td>
+<td><code>audio/M03-R.wav</code></td>
+</tr>
+<tr>
+<td>S05-V</td>
+<td>V</td>
+<td>I</td>
+<td>M03</td>
+<td><code>audio/M03-I.wav</code></td>
+</tr>
+<tr>
+<td>S06-C</td>
+<td>C</td>
+<td>I</td>
+<td>M03</td>
+<td><code>audio/M03-I.wav</code></td>
+</tr>
+<tr>
+<td>S06-V</td>
+<td>V</td>
+<td>R</td>
+<td>M03</td>
+<td><code>audio/M03-R.wav</code></td>
+</tr>
+<tr>
+<td>S07-C</td>
+<td>C</td>
+<td>R</td>
+<td>M04</td>
+<td><code>audio/M04-R.wav</code></td>
+</tr>
+<tr>
+<td>S07-V</td>
+<td>V</td>
+<td>I</td>
+<td>M04</td>
+<td><code>audio/M04-I.wav</code></td>
+</tr>
+<tr>
+<td>S08-C</td>
+<td>C</td>
+<td>I</td>
+<td>M04</td>
+<td><code>audio/M04-I.wav</code></td>
+</tr>
+<tr>
+<td>S08-V</td>
+<td>V</td>
+<td>R</td>
+<td>M04</td>
+<td><code>audio/M04-R.wav</code></td>
+</tr>
+<tr>
+<td>S09-C</td>
+<td>C</td>
+<td>R</td>
+<td>M05</td>
+<td><code>audio/M05-R.wav</code></td>
+</tr>
+<tr>
+<td>S09-V</td>
+<td>V</td>
+<td>I</td>
+<td>M05</td>
+<td><code>audio/M05-I.wav</code></td>
+</tr>
+<tr>
+<td>S10-C</td>
+<td>C</td>
+<td>I</td>
+<td>M05</td>
+<td><code>audio/M05-I.wav</code></td>
+</tr>
+<tr>
+<td>S10-V</td>
+<td>V</td>
+<td>R</td>
+<td>M05</td>
+<td><code>audio/M05-R.wav</code></td>
+</tr>
+<tr>
+<td>S11-C</td>
+<td>C</td>
+<td>R</td>
+<td>M06</td>
+<td><code>audio/M06-R.wav</code></td>
+</tr>
+<tr>
+<td>S11-V</td>
+<td>V</td>
+<td>I</td>
+<td>M06</td>
+<td><code>audio/M06-I.wav</code></td>
+</tr>
+<tr>
+<td>S12-C</td>
+<td>C</td>
+<td>I</td>
+<td>M06</td>
+<td><code>audio/M06-I.wav</code></td>
+</tr>
+<tr>
+<td>S12-V</td>
+<td>V</td>
+<td>R</td>
+<td>M06</td>
+<td><code>audio/M06-R.wav</code></td>
+</tr>
+<tr>
+<td>S13-C</td>
+<td>C</td>
+<td>R</td>
+<td>M07</td>
+<td><code>audio/M07-R.wav</code></td>
+</tr>
+<tr>
+<td>S13-V</td>
+<td>V</td>
+<td>I</td>
+<td>M07</td>
+<td><code>audio/M07-I.wav</code></td>
+</tr>
+<tr>
+<td>S14-C</td>
+<td>C</td>
+<td>I</td>
+<td>M07</td>
+<td><code>audio/M07-I.wav</code></td>
+</tr>
+<tr>
+<td>S14-V</td>
+<td>V</td>
+<td>R</td>
+<td>M07</td>
+<td><code>audio/M07-R.wav</code></td>
+</tr>
+<tr>
+<td>S15-C</td>
+<td>C</td>
+<td>R</td>
+<td>M08</td>
+<td><code>audio/M08-R.wav</code></td>
+</tr>
+<tr>
+<td>S15-V</td>
+<td>V</td>
+<td>I</td>
+<td>M08</td>
+<td><code>audio/M08-I.wav</code></td>
+</tr>
+<tr>
+<td>S16-C</td>
+<td>C</td>
+<td>I</td>
+<td>M08</td>
+<td><code>audio/M08-I.wav</code></td>
+</tr>
+<tr>
+<td>S16-V</td>
+<td>V</td>
+<td>R</td>
+<td>M08</td>
+<td><code>audio/M08-R.wav</code></td>
+</tr>
+<tr>
+<td>S17-C</td>
+<td>C</td>
+<td>R</td>
+<td>M09</td>
+<td><code>audio/M09-R.wav</code></td>
+</tr>
+<tr>
+<td>S17-V</td>
+<td>V</td>
+<td>I</td>
+<td>M09</td>
+<td><code>audio/M09-I.wav</code></td>
+</tr>
+<tr>
+<td>S18-C</td>
+<td>C</td>
+<td>I</td>
+<td>M09</td>
+<td><code>audio/M09-I.wav</code></td>
+</tr>
+<tr>
+<td>S18-V</td>
+<td>V</td>
+<td>R</td>
+<td>M09</td>
+<td><code>audio/M09-R.wav</code></td>
+</tr>
+<tr>
+<td>S19-C</td>
+<td>C</td>
+<td>R</td>
+<td>M10</td>
+<td><code>audio/M10-R.wav</code></td>
+</tr>
+<tr>
+<td>S19-V</td>
+<td>V</td>
+<td>I</td>
+<td>M10</td>
+<td><code>audio/M10-I.wav</code></td>
+</tr>
+<tr>
+<td>S20-C</td>
+<td>C</td>
+<td>I</td>
+<td>M10</td>
+<td><code>audio/M10-I.wav</code></td>
+</tr>
+<tr>
+<td>S20-V</td>
+<td>V</td>
+<td>R</td>
+<td>M10</td>
+<td><code>audio/M10-R.wav</code></td>
+</tr>
+<tr>
+<td>S21-C</td>
+<td>C</td>
+<td>R</td>
+<td>M11</td>
+<td><code>audio/M11-R.wav</code></td>
+</tr>
+<tr>
+<td>S21-V</td>
+<td>V</td>
+<td>I</td>
+<td>M11</td>
+<td><code>audio/M11-I.wav</code></td>
+</tr>
+<tr>
+<td>S22-C</td>
+<td>C</td>
+<td>I</td>
+<td>M11</td>
+<td><code>audio/M11-I.wav</code></td>
+</tr>
+<tr>
+<td>S22-V</td>
+<td>V</td>
+<td>R</td>
+<td>M11</td>
+<td><code>audio/M11-R.wav</code></td>
+</tr>
+<tr>
+<td>S23-C</td>
+<td>C</td>
+<td>R</td>
+<td>M12</td>
+<td><code>audio/M12-R.wav</code></td>
+</tr>
+<tr>
+<td>S23-V</td>
+<td>V</td>
+<td>I</td>
+<td>M12</td>
+<td><code>audio/M12-I.wav</code></td>
+</tr>
+<tr>
+<td>S24-C</td>
+<td>C</td>
+<td>I</td>
+<td>M12</td>
+<td><code>audio/M12-I.wav</code></td>
+</tr>
+<tr>
+<td>S24-V</td>
+<td>V</td>
+<td>R</td>
+<td>M12</td>
+<td><code>audio/M12-R.wav</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="admonition info">
+<p class="admonition-title">注意</p>
+<ul>
+<li><code>P01</code> 是 practice，不放入正式 48 trials</li>
+<li>每個 music pair 會出現 4 個 trials</li>
+<li>每個正式音檔會在 48 trials 中使用 2 次</li>
+</ul>
+</div>
+<h3 id="9-48-trial_1">9. 完整檢查 48-trial 條件表<a class="headerlink" href="#9-48-trial_1" title="Permanent link">&para;</a></h3>
+<p>完成後請逐項確認：</p>
+<ul>
+<li>[ ] 共有 48 trials</li>
+<li>[ ] S01–S24 每個 item 都有 C/V 兩版</li>
+<li>[ ] <code>correctAns</code>：C = j；V = f</li>
+<li>[ ] 每個句子都有 5 words</li>
+<li>[ ] <code>sentence</code> 與 <code>word1</code>–<code>word5</code> 一致</li>
+<li>[ ] <code>music_type</code> 只有 R/I</li>
+<li>[ ] <code>music_pair</code> 只有 M01–M12</li>
+<li>[ ] <code>audio_file</code> 與 <code>music_type</code>、<code>music_pair</code> 一致</li>
+<li>[ ] 所有 <code>audio_file</code> 都以 <code>audio/</code> 開頭</li>
+<li>[ ] 所有正式音檔都是 <code>.wav</code></li>
+<li>[ ] 沒有空白欄位</li>
+<li>[ ] 沒有漏題或重複 trial</li>
+</ul>
+<hr />
+<h2 id="10">任務 10：檢查四種條件是否平衡<a class="headerlink" href="#10" title="Permanent link">&para;</a></h2>
+<h3 id="1-balance_check">1. 新增 Balance_Check 工作表<a class="headerlink" href="#1-balance_check" title="Permanent link">&para;</a></h3>
+<p>在 Excel 下方新增一個工作表，命名為 <code>Balance_Check</code>，建立：</p>
+<table>
+<thead>
+<tr>
+<th>A</th>
+<th>B</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Condition</td>
+<td>Count</td>
+</tr>
+<tr>
+<td>C + R</td>
+<td></td>
+</tr>
+<tr>
+<td>C + I</td>
+<td></td>
+</tr>
+<tr>
+<td>V + R</td>
+<td></td>
+</tr>
+<tr>
+<td>V + I</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>假設正式條件表工作表名稱為 <code>Sheet1</code>，依序在 B2–B5 輸入：</p>
+<div class="highlight"><pre><span></span><code>=COUNTIFS(Sheet1!D:D,&quot;C&quot;,Sheet1!F:F,&quot;R&quot;)
+=COUNTIFS(Sheet1!D:D,&quot;C&quot;,Sheet1!F:F,&quot;I&quot;)
+=COUNTIFS(Sheet1!D:D,&quot;V&quot;,Sheet1!F:F,&quot;R&quot;)
+=COUNTIFS(Sheet1!D:D,&quot;V&quot;,Sheet1!F:F,&quot;I&quot;)
+</code></pre></div>
+<p>正確結果應為四種條件各 12：</p>
+<table>
+<thead>
+<tr>
+<th>Condition</th>
+<th style="text-align: right;">Count</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>C + R</td>
+<td style="text-align: right;">12</td>
+</tr>
+<tr>
+<td>C + I</td>
+<td style="text-align: right;">12</td>
+</tr>
+<tr>
+<td>V + R</td>
+<td style="text-align: right;">12</td>
+</tr>
+<tr>
+<td>V + I</td>
+<td style="text-align: right;">12</td>
+</tr>
+</tbody>
+</table>
+<h3 id="2-cv-ri">2. 檢查整體 C/V 與 R/I<a class="headerlink" href="#2-cv-ri" title="Permanent link">&para;</a></h3>
+<p>在同一張 <code>Balance_Check</code> 工作表加入：</p>
+<table>
+<thead>
+<tr>
+<th>Sentence type</th>
+<th style="text-align: right;">Count</th>
+<th>公式</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>C</td>
+<td style="text-align: right;">24</td>
+<td><code>=COUNTIF(Sheet1!D:D,"C")</code></td>
+</tr>
+<tr>
+<td>V</td>
+<td style="text-align: right;">24</td>
+<td><code>=COUNTIF(Sheet1!D:D,"V")</code></td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Music type</th>
+<th style="text-align: right;">Count</th>
+<th>公式</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>R</td>
+<td style="text-align: right;">24</td>
+<td><code>=COUNTIF(Sheet1!F:F,"R")</code></td>
+</tr>
+<tr>
+<td>I</td>
+<td style="text-align: right;">24</td>
+<td><code>=COUNTIF(Sheet1!F:F,"I")</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="10_1">任務 10 完成標準<a class="headerlink" href="#10_1" title="Permanent link">&para;</a></h3>
+<ul>
+<li>[ ] C + R = 12</li>
+<li>[ ] C + I = 12</li>
+<li>[ ] V + R = 12</li>
+<li>[ ] V + I = 12</li>
+<li>[ ] C = 24</li>
+<li>[ ] V = 24</li>
+<li>[ ] R = 24</li>
+<li>[ ] I = 24</li>
+</ul>
+<hr />
+<h2 id="11-trial">任務 11：設定 trial 呈現順序<a class="headerlink" href="#11-trial" title="Permanent link">&para;</a></h2>
+<p>正式實驗不能直接使用 <code>S01-C → S01-V → S02-C → S02-V ...</code> 這種順序，因為同一個 base sentence 的兩個版本不能連續出現。</p>
+<p>本實驗使用固定的 pseudorandom order，所有受試者使用同一個順序，需符合以下限制：</p>
+<ul>
+<li>同一個 item 的 C/V 至少間隔 <strong>10 trials</strong></li>
+<li>同一個 <code>music_pair</code> 至少間隔 <strong>6 trials</strong></li>
+<li>同一個實際音檔兩次使用至少間隔 <strong>19 trials</strong></li>
+<li>C/V 最多連續 <strong>2 題</strong></li>
+<li>R/I 最多連續 <strong>2 題</strong></li>
+</ul>
+<p>此外，48 個 trials 必須全部出現一次、沒有遺漏、沒有重複，且四種條件（C+R、C+I、V+R、V+I）分散在整個實驗中。</p>
+<h3 id="1-trial_order">1. 建立 Trial_Order 工作表<a class="headerlink" href="#1-trial_order" title="Permanent link">&para;</a></h3>
+<p>新增工作表 <code>Trial_Order</code>，建立兩欄 <code>order</code>、<code>trial_id</code>，依序填入排好的 48 筆固定順序：</p>
+<div class="scrollable-table">
+<table>
+<thead>
+<tr>
+<th style="text-align: right;"><code>order</code></th>
+<th><code>trial_id</code></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: right;">1</td>
+<td>S20-C</td>
+</tr>
+<tr>
+<td style="text-align: right;">2</td>
+<td>S14-V</td>
+</tr>
+<tr>
+<td style="text-align: right;">3</td>
+<td>S12-C</td>
+</tr>
+<tr>
+<td style="text-align: right;">4</td>
+<td>S09-C</td>
+</tr>
+<tr>
+<td style="text-align: right;">5</td>
+<td>S15-V</td>
+</tr>
+<tr>
+<td style="text-align: right;">6</td>
+<td>S04-C</td>
+</tr>
+<tr>
+<td style="text-align: right;">7</td>
+<td>S22-V</td>
+</tr>
+<tr>
+<td style="text-align: right;">8</td>
+<td>S17-C</td>
+</tr>
+<tr>
+<td style="text-align: right;">9</td>
+<td>S07-V</td>
+</tr>
+<tr>
+<td style="text-align: right;">10</td>
+<td>S01-C</td>
+</tr>
+<tr>
+<td style="text-align: right;">11</td>
+<td>S23-V</td>
+</tr>
+<tr>
+<td style="text-align: right;">12</td>
+<td>S06-V</td>
+</tr>
+<tr>
+<td style="text-align: right;">13</td>
+<td>S10-C</td>
+</tr>
+<tr>
+<td style="text-align: right;">14</td>
+<td>S13-V</td>
+</tr>
+<tr>
+<td style="text-align: right;">15</td>
+<td>S15-C</td>
+</tr>
+<tr>
+<td style="text-align: right;">16</td>
+<td>S21-V</td>
+</tr>
+<tr>
+<td style="text-align: right;">17</td>
+<td>S20-V</td>
+</tr>
+<tr>
+<td style="text-align: right;">18</td>
+<td>S18-C</td>
+</tr>
+<tr>
+<td style="text-align: right;">19</td>
+<td>S04-V</td>
+</tr>
+<tr>
+<td style="text-align: right;">20</td>
+<td>S02-C</td>
+</tr>
+<tr>
+<td style="text-align: right;">21</td>
+<td>S07-C</td>
+</tr>
+<tr>
+<td style="text-align: right;">22</td>
+<td>S05-V</td>
+</tr>
+<tr>
+<td style="text-align: right;">23</td>
+<td>S23-C</td>
+</tr>
+<tr>
+<td style="text-align: right;">24</td>
+<td>S12-V</td>
+</tr>
+<tr>
+<td style="text-align: right;">25</td>
+<td>S03-V</td>
+</tr>
+<tr>
+<td style="text-align: right;">26</td>
+<td>S16-C</td>
+</tr>
+<tr>
+<td style="text-align: right;">27</td>
+<td>S21-C</td>
+</tr>
+<tr>
+<td style="text-align: right;">28</td>
+<td>S10-V</td>
+</tr>
+<tr>
+<td style="text-align: right;">29</td>
+<td>S19-V</td>
+</tr>
+<tr>
+<td style="text-align: right;">30</td>
+<td>S24-C</td>
+</tr>
+<tr>
+<td style="text-align: right;">31</td>
+<td>S02-V</td>
+</tr>
+<tr>
+<td style="text-align: right;">32</td>
+<td>S13-C</td>
+</tr>
+<tr>
+<td style="text-align: right;">33</td>
+<td>S08-C</td>
+</tr>
+<tr>
+<td style="text-align: right;">34</td>
+<td>S11-V</td>
+</tr>
+<tr>
+<td style="text-align: right;">35</td>
+<td>S05-C</td>
+</tr>
+<tr>
+<td style="text-align: right;">36</td>
+<td>S18-V</td>
+</tr>
+<tr>
+<td style="text-align: right;">37</td>
+<td>S09-V</td>
+</tr>
+<tr>
+<td style="text-align: right;">38</td>
+<td>S14-C</td>
+</tr>
+<tr>
+<td style="text-align: right;">39</td>
+<td>S16-V</td>
+</tr>
+<tr>
+<td style="text-align: right;">40</td>
+<td>S01-V</td>
+</tr>
+<tr>
+<td style="text-align: right;">41</td>
+<td>S19-C</td>
+</tr>
+<tr>
+<td style="text-align: right;">42</td>
+<td>S06-C</td>
+</tr>
+<tr>
+<td style="text-align: right;">43</td>
+<td>S24-V</td>
+</tr>
+<tr>
+<td style="text-align: right;">44</td>
+<td>S03-C</td>
+</tr>
+<tr>
+<td style="text-align: right;">45</td>
+<td>S22-C</td>
+</tr>
+<tr>
+<td style="text-align: right;">46</td>
+<td>S17-V</td>
+</tr>
+<tr>
+<td style="text-align: right;">47</td>
+<td>S11-C</td>
+</tr>
+<tr>
+<td style="text-align: right;">48</td>
+<td>S08-V</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h3 id="2-final_conditions">2. 建立 Final_Conditions 工作表<a class="headerlink" href="#2-final_conditions" title="Permanent link">&para;</a></h3>
+<p>新增工作表 <code>Final_Conditions</code>，第一列使用和正式條件表完全相同的 13 個欄位（A–M）。</p>
+<p>假設原始 48-trial 條件表工作表叫 <code>Sheet1</code>，<code>Trial_Order</code> 的 B 欄是 <code>trial_id</code>，在 <code>Final_Conditions!A2</code> 輸入：</p>
+<div class="highlight"><pre><span></span><code>=XLOOKUP(Trial_Order!B2,Sheet1!$A$2:$A$49,Sheet1!$A$2:$M$49)
+</code></pre></div>
+<p>按 Enter 後確認 A2–M2 自動帶入完整資料，再把公式往下填到第 49 列。</p>
+<h3 id="3-psychopy">3. 建立 PsychoPy 最終正式檔<a class="headerlink" href="#3-psychopy" title="Permanent link">&para;</a></h3>
+<p>另外建立一個新的 Excel 檔案 <code>conditions_final.xlsx</code>，把 <code>Final_Conditions</code> 的 A1:M49 複製過去。</p>
+<div class="admonition warning">
+<p class="admonition-title">使用「貼上值」，不要貼公式</p>
+<p>請使用 <strong>Paste Values / 貼上值</strong>，不要把 <code>XLOOKUP</code> 公式一起帶過去。<code>conditions_final.xlsx</code> 應只保留乾淨的正式 48-trial 表。</p>
+</div>
+<h3 id="4-psychopy-conditions_finalxlsx">4. 讓 PsychoPy 讀取 conditions_final.xlsx<a class="headerlink" href="#4-psychopy-conditions_finalxlsx" title="Permanent link">&para;</a></h3>
+<p>打開 <code>trials</code> Loop，把 Conditions 改成 <code>conditions_final.xlsx</code>。成功載入後應看到：</p>
+<div class="highlight"><pre><span></span><code>48 conditions, with 13 parameters
+</code></pre></div>
+<h3 id="5-loop">5. 設定 Loop<a class="headerlink" href="#5-loop" title="Permanent link">&para;</a></h3>
+<p>在 <code>trials</code> Loop 中確認：</p>
+<table>
+<thead>
+<tr>
+<th>欄位</th>
+<th>設定</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Loop type</td>
+<td><code>sequential</code></td>
+</tr>
+<tr>
+<td>Num. repeats</td>
+<td><code>1</code></td>
+</tr>
+<tr>
+<td>Selected rows</td>
+<td>空白</td>
+</tr>
+<tr>
+<td>Random seed</td>
+<td>空白</td>
+</tr>
+<tr>
+<td>Conditions</td>
+<td><code>conditions_final.xlsx</code></td>
+</tr>
+</tbody>
+</table>
+<p>因為 pseudorandom order 已經排好，所以不要再使用 random。</p>
+<h3 id="6-4-trials">6. 先跑前 4 trials 測試<a class="headerlink" href="#6-4-trials" title="Permanent link">&para;</a></h3>
+<p>暫時在 <code>Selected rows</code> 輸入 <code>0:4</code>，其他設定維持 <code>sequential</code>、<code>Num. repeats = 1</code>、<code>Random seed</code> 空白。</p>
+<p>Run 時可填 <code>participant = test02</code>、<code>session = 001</code>。</p>
+<p>確認：</p>
+<ul>
+<li>[ ] 音檔正常播放</li>
+<li>[ ] 句子內容正確</li>
+<li>[ ] 500 ms fixation 正常</li>
+<li>[ ] 五個 words/chords 同步</li>
+<li>[ ] 第五個 onset 後可按 <code>f</code>/<code>j</code></li>
+<li>[ ] RT 正常</li>
+<li>[ ] accuracy 正常</li>
+<li>[ ] 音樂不被截斷</li>
+<li>[ ] 沒有 error</li>
+</ul>
+<h3 id="7-48-trials">7. 恢復完整 48 trials<a class="headerlink" href="#7-48-trials" title="Permanent link">&para;</a></h3>
+<p>4-trial 測試成功後，再次打開 <code>trials</code> Loop，把 <code>Selected rows = 0:4</code> 刪除、恢復空白，確認設定與步驟 5 相同，按 OK 並儲存 <code>.psyexp</code>。</p>
+<h3 id="8-48-trials">8. 完整跑一次 48 trials<a class="headerlink" href="#8-48-trials" title="Permanent link">&para;</a></h3>
+<p>Run（<code>participant = test03</code>、<code>session = 001</code>），確認：</p>
+<ul>
+<li>[ ] 48 trials 全部跑完</li>
+<li>[ ] 所有正式音檔都能找到</li>
+<li>[ ] 所有句子正常顯示</li>
+<li>[ ] word/chord 同步正常</li>
+<li>[ ] fixation timing 正常</li>
+<li>[ ] 第五個 onset 後才開始反應</li>
+<li>[ ] <code>f</code>/<code>j</code> 正常記錄</li>
+<li>[ ] 音樂不會被截斷</li>
+<li>[ ] 沒有 error</li>
+<li>[ ] 實驗可以正常結束</li>
+</ul>
+<h3 id="9-csv">9. 檢查輸出的 CSV<a class="headerlink" href="#9-csv" title="Permanent link">&para;</a></h3>
+<p>找到剛才完整 48-trial 測試產生的 CSV，確認正式條件欄位都有寫入：</p>
+<div class="highlight"><pre><span></span><code>trial_id, item_id, sentence, sentence_type, correctAns,
+music_type, music_pair, audio_file, word1–word5
+</code></pre></div>
+<p>並確認 Keyboard component 產生的 <code>.keys</code>、<code>.rt</code>、<code>.corr</code>：</p>
+<ul>
+<li><code>.keys</code> 應記錄 <code>f</code> 或 <code>j</code></li>
+<li><code>.rt</code> 應有反應時間</li>
+<li><code>.corr</code>：1 = correct；0 = incorrect</li>
+</ul>
+<p>最後確認：</p>
+<ul>
+<li>[ ] CSV 有 48 個正式 trials</li>
+<li>[ ] 沒有漏 trial</li>
+<li>[ ] 沒有重複 trial</li>
+<li>[ ] PsychoPy timing 欄位有正常寫入</li>
+</ul>
+<hr />
+<h2 id="_1">第三階段完成檢查表<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<ul>
+<li>[ ] 任務 9：建立完整 48-trial 條件表</li>
+<li>[ ] 任務 10：檢查四種條件是否平衡</li>
+<li>[ ] 任務 11：設定固定 pseudorandom trial order，並完成 48-trial 正式測試與 CSV 驗證</li>
+</ul>
+<p>➡️ 接下來進入第四階段：完成受試者實際看到的實驗。</p>
 
 
 
@@ -541,7 +1835,7 @@
     <span class="md-icon" title="最後更新">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime" title="2026年8月9日 00:33:05 CST">2026年8月9日 00:33:05</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime" title="2026年8月16日 03:16:40 CST">2026年8月16日 03:16:40</span>
   </span>
 
     
