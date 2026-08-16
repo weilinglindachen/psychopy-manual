@@ -80,7 +80,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#_2" class="md-skip">
+        <a href="#12-practice-trials" class="md-skip">
           跳轉到
         </a>
       
@@ -408,10 +408,87 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#12-practice-trials" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        任務 12：建立 Practice trials
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#13-instructions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        任務 13：加入 Instructions
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#14-practice-formal-experiment" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        任務 14：建立 Practice → Formal experiment 轉場
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#15" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        任務 15：加入中途休息
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#16-participant-information" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        任務 16：設定 Participant Information
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#17" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        任務 17：加入實驗結束畫面
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#18-end-to-end" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        任務 18：完整 End-to-End 測試
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#_2" class="md-nav__link">
     <span class="md-ellipsis">
       
-        預計完成
+        第四階段完成檢查表
       
     </span>
   </a>
@@ -471,21 +548,933 @@
 
 
 <h1 id="_1">第四階段：完成受試者實際看到的實驗<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
-<p><strong>任務 12–17</strong></p>
-<div class="admonition info">
-<p class="admonition-title">尚未開始</p>
-<p>這個階段的內容還在準備中，完成後會補上詳細操作步驟與除錯說明。</p>
-</div>
-<h2 id="_2">預計完成<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<p><strong>任務 12–18</strong></p>
+<p>第四階段把第三階段完成的正式 48-trial 實驗本體，包成完整的受試者流程：</p>
+<div class="highlight"><pre><span></span><code>Instructions
+→ Practice（4 trials）
+→ Formal Start
+→ Formal Part 1（24 trials）
+→ Break
+→ Formal Part 2（24 trials）
+→ End
+</code></pre></div>
+<p>本階段包含：</p>
 <ul>
-<li>[ ] 任務 12：實驗說明畫面</li>
-<li>[ ] 任務 13：practice trials</li>
-<li>[ ] 任務 14：練習題回饋</li>
-<li>[ ] 任務 15：中場休息</li>
-<li>[ ] 任務 16：participant 資料欄位</li>
-<li>[ ] 任務 17：結束與感謝畫面</li>
+<li>[ ] 任務 12：建立 Practice trials</li>
+<li>[ ] 任務 13：加入 Instructions</li>
+<li>[ ] 任務 14：建立 Practice → Formal experiment 轉場</li>
+<li>[ ] 任務 15：加入中途休息</li>
+<li>[ ] 任務 16：設定 Participant information</li>
+<li>[ ] 任務 17：加入實驗結束畫面</li>
+<li>[ ] 任務 18：完整 end-to-end 測試</li>
 </ul>
-<p>完成後，實驗即可交由受試者實際操作。</p>
+<hr />
+<h2 id="12-practice-trials">任務 12：建立 Practice trials<a class="headerlink" href="#12-practice-trials" title="Permanent link">&para;</a></h2>
+<h3 id="1-conditions_practicexlsx">1. 建立 conditions_practice.xlsx<a class="headerlink" href="#1-conditions_practicexlsx" title="Permanent link">&para;</a></h3>
+<p>Practice 不放進 <code>conditions_final.xlsx</code>，而是另外建立 <code>conditions_practice.xlsx</code>，和 <code>.psyexp</code>、正式條件表放在同一層：</p>
+<div class="highlight"><pre><span></span><code>Jessy_psychopy/
+├── practice01.psyexp
+├── conditions_final.xlsx
+├── conditions_practice.xlsx
+└── audio/
+    ├── M01-R.wav
+    ├── M01-I.wav
+    ├── ...
+    ├── M12-R.wav
+    ├── M12-I.wav
+    ├── P01-R.wav
+    └── P01-I.wav
+</code></pre></div>
+<p>Practice 條件表使用和正式版完全相同的 13 欄：</p>
+<table>
+<thead>
+<tr>
+<th>A</th>
+<th>B</th>
+<th>C</th>
+<th>D</th>
+<th>E</th>
+<th>F</th>
+<th>G</th>
+<th>H</th>
+<th>I</th>
+<th>J</th>
+<th>K</th>
+<th>L</th>
+<th>M</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>trial_id</code></td>
+<td><code>item_id</code></td>
+<td><code>sentence</code></td>
+<td><code>sentence_type</code></td>
+<td><code>correctAns</code></td>
+<td><code>music_type</code></td>
+<td><code>music_pair</code></td>
+<td><code>audio_file</code></td>
+<td><code>word1</code></td>
+<td><code>word2</code></td>
+<td><code>word3</code></td>
+<td><code>word4</code></td>
+<td><code>word5</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="2-4-practice-trials">2. 填入 4 個 Practice trials<a class="headerlink" href="#2-4-practice-trials" title="Permanent link">&para;</a></h3>
+<p>Practice 使用兩組句子，各有 C/V 兩版，共 4 trials，音檔統一使用 <code>P01</code>：</p>
+<table>
+<thead>
+<tr>
+<th><code>trial_id</code></th>
+<th><code>item_id</code></th>
+<th><code>sentence</code></th>
+<th><code>sentence_type</code></th>
+<th><code>correctAns</code></th>
+<th><code>music_type</code></th>
+<th><code>music_pair</code></th>
+<th><code>audio_file</code></th>
+<th><code>word1</code></th>
+<th><code>word2</code></th>
+<th><code>word3</code></th>
+<th><code>word4</code></th>
+<th><code>word5</code></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>PS01-C</td>
+<td>PS01</td>
+<td>The noisy lady often screams.</td>
+<td>C</td>
+<td>j</td>
+<td>R</td>
+<td>P01</td>
+<td><code>audio/P01-R.wav</code></td>
+<td>The</td>
+<td>noisy</td>
+<td>lady</td>
+<td>often</td>
+<td>screams.</td>
+</tr>
+<tr>
+<td>PS01-V</td>
+<td>PS01</td>
+<td>The noisy lady often scream.</td>
+<td>V</td>
+<td>f</td>
+<td>I</td>
+<td>P01</td>
+<td><code>audio/P01-I.wav</code></td>
+<td>The</td>
+<td>noisy</td>
+<td>lady</td>
+<td>often</td>
+<td>scream.</td>
+</tr>
+<tr>
+<td>PS02-C</td>
+<td>PS02</td>
+<td>The slimy worms often wiggle.</td>
+<td>C</td>
+<td>j</td>
+<td>I</td>
+<td>P01</td>
+<td><code>audio/P01-I.wav</code></td>
+<td>The</td>
+<td>slimy</td>
+<td>worms</td>
+<td>often</td>
+<td>wiggle.</td>
+</tr>
+<tr>
+<td>PS02-V</td>
+<td>PS02</td>
+<td>The slimy worms often wiggles.</td>
+<td>V</td>
+<td>f</td>
+<td>R</td>
+<td>P01</td>
+<td><code>audio/P01-R.wav</code></td>
+<td>The</td>
+<td>slimy</td>
+<td>worms</td>
+<td>often</td>
+<td>wiggles.</td>
+</tr>
+</tbody>
+</table>
+<p>Practice 的四種條件各出現一次：</p>
+<table>
+<thead>
+<tr>
+<th>條件</th>
+<th style="text-align: right;">數量</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>C + R</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr>
+<td>C + I</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr>
+<td>V + R</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr>
+<td>V + I</td>
+<td style="text-align: right;">1</td>
+</tr>
+</tbody>
+</table>
+<h3 id="3-flow-practice-routine">3. 在 Flow 中加入 Practice routine<a class="headerlink" href="#3-flow-practice-routine" title="Permanent link">&para;</a></h3>
+<p>在正式 <code>trials</code> loop 前面，再插入一次原本已經設定好的 <code>trial</code> Routine。</p>
+<div class="admonition warning">
+<p class="admonition-title">不要重新建立新的 trial routine</p>
+<p>在 Flow 中插入既有的 <code>trial</code> Routine，不要重新建立一個新的。這樣才能沿用已經設定好的 fixation、五個 words、音樂、keyboard、RT、accuracy、timing。</p>
+</div>
+<p>Flow 概念上會先變成：</p>
+<div class="highlight"><pre><span></span><code>trial → formal trials
+</code></pre></div>
+<p>左邊新增的 <code>trial</code> 將作為 Practice 使用。</p>
+<h3 id="4-practice-loop">4. 建立 practice Loop<a class="headerlink" href="#4-practice-loop" title="Permanent link">&para;</a></h3>
+<p>用新的 Loop 包住 Practice 用的 <code>trial</code> routine：</p>
+<table>
+<thead>
+<tr>
+<th>欄位</th>
+<th>設定</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Name</td>
+<td><code>practice</code></td>
+</tr>
+<tr>
+<td>Loop type</td>
+<td><code>sequential</code></td>
+</tr>
+<tr>
+<td>Num. repeats</td>
+<td><code>1</code></td>
+</tr>
+<tr>
+<td>Conditions</td>
+<td><code>conditions_practice.xlsx</code></td>
+</tr>
+<tr>
+<td>Selected rows</td>
+<td>空白</td>
+</tr>
+<tr>
+<td>Random seed</td>
+<td>空白</td>
+</tr>
+</tbody>
+</table>
+<p>成功載入後應看到：</p>
+<div class="highlight"><pre><span></span><code>4 conditions, with 13 parameters
+</code></pre></div>
+<p>Flow 概念上應為：</p>
+<div class="highlight"><pre><span></span><code>practice loop → formal trials loop
+</code></pre></div>
+<h3 id="5-practice">5. 測試 Practice<a class="headerlink" href="#5-practice" title="Permanent link">&para;</a></h3>
+<p>Run 時可填 <code>participant = test04</code>、<code>session = 001</code>，確認：</p>
+<ul>
+<li>[ ] PS01-C → P01-R</li>
+<li>[ ] PS01-V → P01-I</li>
+<li>[ ] PS02-C → P01-I</li>
+<li>[ ] PS02-V → P01-R</li>
+<li>[ ] 500 ms fixation 正常</li>
+<li>[ ] 五個 words 正常呈現</li>
+<li>[ ] <code>word5</code> 有句點</li>
+<li>[ ] P01 音檔正常播放</li>
+<li>[ ] word/chord 同步正常</li>
+<li>[ ] 第五個 onset 後可以按 <code>f</code>/<code>j</code></li>
+<li>[ ] RT 正常</li>
+<li>[ ] accuracy 正常</li>
+<li>[ ] Practice 結束後能順利接到正式 trials</li>
+</ul>
+<h3 id="6-practice">6. 確認 Practice 資料<a class="headerlink" href="#6-practice" title="Permanent link">&para;</a></h3>
+<p>打開測試 CSV，確認可用 <code>trial_id</code> 找到 <code>PS01-C</code>、<code>PS01-V</code>、<code>PS02-C</code>、<code>PS02-V</code>，且這些列都有 response、RT、correct/incorrect、<code>music_type</code>、<code>music_pair = P01</code>。</p>
+<hr />
+<h2 id="13-instructions">任務 13：加入 Instructions<a class="headerlink" href="#13-instructions" title="Permanent link">&para;</a></h2>
+<h3 id="1-instructions-routine">1. 建立 instructions Routine<a class="headerlink" href="#1-instructions-routine" title="Permanent link">&para;</a></h3>
+<p>在 Flow 最前面、<code>practice</code> loop 前面新增 <code>instructions</code>。Flow 概念上變成：</p>
+<div class="highlight"><pre><span></span><code>instructions → practice → formal trials
+</code></pre></div>
+<h3 id="2-text-component">2. 加入 Text component<a class="headerlink" href="#2-text-component" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>欄位</th>
+<th>設定</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Name</td>
+<td><code>instruction_text</code></td>
+</tr>
+<tr>
+<td>Start</td>
+<td><code>0</code></td>
+</tr>
+<tr>
+<td>Stop / Duration</td>
+<td>留白</td>
+</tr>
+</tbody>
+</table>
+<p>Text 內容：</p>
+<blockquote>
+<p>You will see English sentences presented one word at a time while listening to music.</p>
+<p>Please decide whether each sentence is grammatically correct.</p>
+<p>Press <strong>F</strong> if the sentence is incorrect.
+Press <strong>J</strong> if the sentence is correct.</p>
+<p>Please respond as quickly and accurately as possible.</p>
+<p>Press SPACE to begin the practice trials.</p>
+</blockquote>
+<h3 id="3-keyboard-component">3. 加入 Keyboard component<a class="headerlink" href="#3-keyboard-component" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>欄位</th>
+<th>設定</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Name</td>
+<td><code>instruction_key</code></td>
+</tr>
+<tr>
+<td>Allowed keys</td>
+<td><code>space</code></td>
+</tr>
+<tr>
+<td>Start</td>
+<td><code>0</code></td>
+</tr>
+<tr>
+<td>Force end of Routine</td>
+<td>勾選</td>
+</tr>
+<tr>
+<td>Store</td>
+<td><code>nothing</code></td>
+</tr>
+</tbody>
+</table>
+<p>這樣 Instructions 會一直留在畫面上，直到受試者按 Space。</p>
+<h3 id="4-instructions">4. 測試 Instructions<a class="headerlink" href="#4-instructions" title="Permanent link">&para;</a></h3>
+<p>Run 時可填 <code>participant = test05</code>、<code>session = 001</code>，確認：</p>
+<ul>
+<li>[ ] Instructions 最先出現</li>
+<li>[ ] 畫面不會自動跳走</li>
+<li>[ ] 其他按鍵不會進入下一頁</li>
+<li>[ ] 按 Space 才進入 Practice</li>
+<li>[ ] Practice 可正常開始</li>
+</ul>
+<hr />
+<h2 id="14-practice-formal-experiment">任務 14：建立 Practice → Formal experiment 轉場<a class="headerlink" href="#14-practice-formal-experiment" title="Permanent link">&para;</a></h2>
+<h3 id="1-formal_start-routine">1. 新增 formal_start Routine<a class="headerlink" href="#1-formal_start-routine" title="Permanent link">&para;</a></h3>
+<p>在 <code>practice</code> loop 後面、正式 trials 前面新增 <code>formal_start</code>。Flow 變成：</p>
+<div class="highlight"><pre><span></span><code>instructions → practice → formal_start → formal trials
+</code></pre></div>
+<h3 id="2-text-component_1">2. 加入 Text component<a class="headerlink" href="#2-text-component_1" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>欄位</th>
+<th>設定</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Name</td>
+<td><code>formal_start_text</code></td>
+</tr>
+<tr>
+<td>Start</td>
+<td><code>0</code></td>
+</tr>
+<tr>
+<td>Stop / Duration</td>
+<td>留白</td>
+</tr>
+</tbody>
+</table>
+<p>Text 內容：</p>
+<blockquote>
+<p>Practice is complete.</p>
+<p>The formal experiment will now begin.</p>
+<p>Please continue to respond as quickly and accurately as possible.</p>
+<p>Press SPACE when you are ready to begin.</p>
+</blockquote>
+<h3 id="3-keyboard-component_1">3. 加入 Keyboard component<a class="headerlink" href="#3-keyboard-component_1" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>欄位</th>
+<th>設定</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Name</td>
+<td><code>formal_start_key</code></td>
+</tr>
+<tr>
+<td>Allowed keys</td>
+<td><code>space</code></td>
+</tr>
+<tr>
+<td>Start</td>
+<td><code>0</code></td>
+</tr>
+<tr>
+<td>Force end of Routine</td>
+<td>勾選</td>
+</tr>
+<tr>
+<td>Store</td>
+<td><code>nothing</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="4-practice-formal">4. 測試 Practice → Formal 轉場<a class="headerlink" href="#4-practice-formal" title="Permanent link">&para;</a></h3>
+<p>Run 時可填 <code>participant = test06</code>、<code>session = 001</code>，確認流程：</p>
+<ol>
+<li>instructions</li>
+<li>Space</li>
+<li>4 個 Practice trials</li>
+<li><code>formal_start</code></li>
+<li>Space</li>
+<li>第一個 formal trial</li>
+</ol>
+<p>第一個正式 trial 應為 <code>S20-C</code>，音檔為 <code>M10-I.wav</code>。</p>
+<hr />
+<h2 id="15">任務 15：加入中途休息<a class="headerlink" href="#15" title="Permanent link">&para;</a></h2>
+<p>正式 48 trials 分成：</p>
+<div class="highlight"><pre><span></span><code>前 24 trials → Break → 後 24 trials
+</code></pre></div>
+<h3 id="1">1. 建立前後兩份正式條件表<a class="headerlink" href="#1" title="Permanent link">&para;</a></h3>
+<p>保留原本的 <code>conditions_final.xlsx</code>，另外建立 <code>conditions_final_part1.xlsx</code>、<code>conditions_final_part2.xlsx</code>：</p>
+<table>
+<thead>
+<tr>
+<th>檔案</th>
+<th>內容</th>
+<th>第一題</th>
+<th>最後一題</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>conditions_final_part1.xlsx</code></td>
+<td>標題列 + 第 1–24 個 formal trials</td>
+<td>S20-C</td>
+<td>S12-V</td>
+</tr>
+<tr>
+<td><code>conditions_final_part2.xlsx</code></td>
+<td>標題列 + 第 25–48 個 formal trials</td>
+<td>S03-V</td>
+<td>S08-V</td>
+</tr>
+</tbody>
+</table>
+<p>因此 Break 應位於：</p>
+<div class="highlight"><pre><span></span><code>S12-V → Break → S03-V
+</code></pre></div>
+<h3 id="2-formal_part1">2. 設定 formal_part1<a class="headerlink" href="#2-formal_part1" title="Permanent link">&para;</a></h3>
+<p>把原本正式 <code>trials</code> Loop 改成：</p>
+<table>
+<thead>
+<tr>
+<th>欄位</th>
+<th>設定</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Name</td>
+<td><code>formal_part1</code></td>
+</tr>
+<tr>
+<td>Conditions</td>
+<td><code>conditions_final_part1.xlsx</code></td>
+</tr>
+<tr>
+<td>Loop type</td>
+<td><code>sequential</code></td>
+</tr>
+<tr>
+<td>Num. repeats</td>
+<td><code>1</code></td>
+</tr>
+<tr>
+<td>Selected rows</td>
+<td>空白</td>
+</tr>
+<tr>
+<td>Random seed</td>
+<td>空白</td>
+</tr>
+</tbody>
+</table>
+<p>成功載入後應看到 24 conditions、13 parameters。</p>
+<h3 id="3-break_screen">3. 新增 break_screen<a class="headerlink" href="#3-break_screen" title="Permanent link">&para;</a></h3>
+<p>在 <code>formal_part1</code> 後面新增 Routine <code>break_screen</code>。</p>
+<p><strong>Text component</strong></p>
+<table>
+<thead>
+<tr>
+<th>欄位</th>
+<th>設定</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Name</td>
+<td><code>break_text</code></td>
+</tr>
+<tr>
+<td>Start</td>
+<td><code>0</code></td>
+</tr>
+<tr>
+<td>Stop / Duration</td>
+<td>留白</td>
+</tr>
+</tbody>
+</table>
+<p>Text 內容：</p>
+<blockquote>
+<p>You may take a short break now.</p>
+<p>Press SPACE when you are ready to continue.</p>
+</blockquote>
+<p><strong>Keyboard component</strong></p>
+<table>
+<thead>
+<tr>
+<th>欄位</th>
+<th>設定</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Name</td>
+<td><code>break_key</code></td>
+</tr>
+<tr>
+<td>Allowed keys</td>
+<td><code>space</code></td>
+</tr>
+<tr>
+<td>Start</td>
+<td><code>0</code></td>
+</tr>
+<tr>
+<td>Force end of Routine</td>
+<td>勾選</td>
+</tr>
+<tr>
+<td>Store</td>
+<td><code>nothing</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="4-formal_part2">4. 建立 formal_part2<a class="headerlink" href="#4-formal_part2" title="Permanent link">&para;</a></h3>
+<p>在 <code>break_screen</code> 後面再插入一次原本的 <code>trial</code> Routine，用新的 Loop 包住它：</p>
+<table>
+<thead>
+<tr>
+<th>欄位</th>
+<th>設定</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Name</td>
+<td><code>formal_part2</code></td>
+</tr>
+<tr>
+<td>Loop type</td>
+<td><code>sequential</code></td>
+</tr>
+<tr>
+<td>Num. repeats</td>
+<td><code>1</code></td>
+</tr>
+<tr>
+<td>Conditions</td>
+<td><code>conditions_final_part2.xlsx</code></td>
+</tr>
+<tr>
+<td>Selected rows</td>
+<td>空白</td>
+</tr>
+<tr>
+<td>Random seed</td>
+<td>空白</td>
+</tr>
+</tbody>
+</table>
+<p>成功載入後應看到 24 conditions、13 parameters。</p>
+<h3 id="5">5. 確認切點<a class="headerlink" href="#5" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>檔案</th>
+<th>第一題</th>
+<th>最後一題</th>
+<th style="text-align: right;">Trial 數</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>conditions_final_part1.xlsx</code></td>
+<td>S20-C</td>
+<td>S12-V</td>
+<td style="text-align: right;">24</td>
+</tr>
+<tr>
+<td><code>conditions_final_part2.xlsx</code></td>
+<td>S03-V</td>
+<td>S08-V</td>
+<td style="text-align: right;">24</td>
+</tr>
+</tbody>
+</table>
+<p>Break 必須出現在 <code>S12-V → Break → S03-V</code>。</p>
+<h3 id="6-break">6. 快速測試 Break<a class="headerlink" href="#6-break" title="Permanent link">&para;</a></h3>
+<p>為了不用跑完前 24 題，可以暫時設定：</p>
+<table>
+<thead>
+<tr>
+<th>Loop</th>
+<th>Selected rows</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>formal_part1</code></td>
+<td><code>23</code></td>
+</tr>
+<tr>
+<td><code>formal_part2</code></td>
+<td><code>0</code></td>
+</tr>
+</tbody>
+</table>
+<p>Run 時可填 <code>participant = test07</code>、<code>session = 001</code>，確認流程為：</p>
+<div class="highlight"><pre><span></span><code>Practice → Formal Start → S12-V → Break → S03-V
+</code></pre></div>
+<p>Break 應：</p>
+<ul>
+<li>[ ] 不會自己消失</li>
+<li>[ ] 按 Space 才繼續</li>
+<li>[ ] Break 後正常進入 S03-V</li>
+</ul>
+<div class="admonition warning">
+<p class="admonition-title">測試完成後記得清空 Selected rows</p>
+<p><code>formal_part1</code>、<code>formal_part2</code> 的 <code>Selected rows</code> 都要清空，恢復成空白，否則之後只會跑到剛才指定的那一列。</p>
+</div>
+<hr />
+<h2 id="16-participant-information">任務 16：設定 Participant Information<a class="headerlink" href="#16-participant-information" title="Permanent link">&para;</a></h2>
+<h3 id="1-experiment-settings">1. 打開 Experiment Settings<a class="headerlink" href="#1-experiment-settings" title="Permanent link">&para;</a></h3>
+<p>進入 <strong>Experiment Settings → Basic</strong>，確認 <strong>Show info dlg</strong> 有勾選。</p>
+<h3 id="2-experiment-info">2. 設定 Experiment Info<a class="headerlink" href="#2-experiment-info" title="Permanent link">&para;</a></h3>
+<p>建議至少保留 <code>participant</code>、<code>session</code>、<code>age</code>、<code>musical_training_years</code>、<code>instrument</code>：</p>
+<table>
+<thead>
+<tr>
+<th>欄位</th>
+<th>範例</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>participant</td>
+<td>P001</td>
+</tr>
+<tr>
+<td>session</td>
+<td>001</td>
+</tr>
+<tr>
+<td>age</td>
+<td>16</td>
+</tr>
+<tr>
+<td>musical_training_years</td>
+<td>6</td>
+</tr>
+<tr>
+<td>instrument</td>
+<td>piano</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition info">
+<p class="admonition-title">不建議手動填 group</p>
+<p>之後可根據 <code>musical_training_years</code> 統一分類，不需要另外手動填寫 <code>group</code> 欄位。</p>
+</div>
+<h3 id="3-participant-information">3. 測試 Participant Information<a class="headerlink" href="#3-participant-information" title="Permanent link">&para;</a></h3>
+<p>Run 時可填 <code>participant = test08</code>、<code>session = 001</code>、<code>age = 16</code>、<code>musical_training_years = 6</code>、<code>instrument = piano</code>，進到第一個畫面後即可 <code>Esc</code>。</p>
+<p>打開輸出資料，確認 <code>participant</code>、<code>session</code>、<code>age</code>、<code>musical_training_years</code>、<code>instrument</code> 都有被記錄。</p>
+<hr />
+<h2 id="17">任務 17：加入實驗結束畫面<a class="headerlink" href="#17" title="Permanent link">&para;</a></h2>
+<h3 id="1-end_screen">1. 新增 end_screen<a class="headerlink" href="#1-end_screen" title="Permanent link">&para;</a></h3>
+<p>在 <code>formal_part2</code> 後面新增 <code>end_screen</code>。</p>
+<h3 id="2-text-component_2">2. 加入 Text component<a class="headerlink" href="#2-text-component_2" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>欄位</th>
+<th>設定</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Name</td>
+<td><code>end_text</code></td>
+</tr>
+<tr>
+<td>Start</td>
+<td><code>0</code></td>
+</tr>
+<tr>
+<td>Stop / Duration</td>
+<td>留白</td>
+</tr>
+</tbody>
+</table>
+<p>Text 內容：</p>
+<blockquote>
+<p>The experiment is complete.</p>
+<p>Thank you for your participation.</p>
+<p>Please inform the researcher that you have finished.</p>
+<p>Press SPACE to exit.</p>
+</blockquote>
+<h3 id="3-keyboard-component_2">3. 加入 Keyboard component<a class="headerlink" href="#3-keyboard-component_2" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>欄位</th>
+<th>設定</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Name</td>
+<td><code>end_key</code></td>
+</tr>
+<tr>
+<td>Allowed keys</td>
+<td><code>space</code></td>
+</tr>
+<tr>
+<td>Start</td>
+<td><code>0</code></td>
+</tr>
+<tr>
+<td>Force end of Routine</td>
+<td>勾選</td>
+</tr>
+<tr>
+<td>Store</td>
+<td><code>nothing</code></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="18-end-to-end">任務 18：完整 End-to-End 測試<a class="headerlink" href="#18-end-to-end" title="Permanent link">&para;</a></h2>
+<h3 id="1-loop">1. 確認所有 Loop 設定恢復正式狀態<a class="headerlink" href="#1-loop" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Loop</th>
+<th>Conditions</th>
+<th style="text-align: right;">Conditions 數</th>
+<th>Loop type</th>
+<th>Num. repeats</th>
+<th>Selected rows</th>
+<th>Random seed</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Practice</td>
+<td><code>conditions_practice.xlsx</code></td>
+<td style="text-align: right;">4</td>
+<td><code>sequential</code></td>
+<td><code>1</code></td>
+<td>空白</td>
+<td>空白</td>
+</tr>
+<tr>
+<td>Formal Part 1</td>
+<td><code>conditions_final_part1.xlsx</code></td>
+<td style="text-align: right;">24</td>
+<td><code>sequential</code></td>
+<td><code>1</code></td>
+<td>空白</td>
+<td>空白</td>
+</tr>
+<tr>
+<td>Formal Part 2</td>
+<td><code>conditions_final_part2.xlsx</code></td>
+<td style="text-align: right;">24</td>
+<td><code>sequential</code></td>
+<td><code>1</code></td>
+<td>空白</td>
+<td>空白</td>
+</tr>
+</tbody>
+</table>
+<h3 id="2-flow">2. 確認完整 Flow<a class="headerlink" href="#2-flow" title="Permanent link">&para;</a></h3>
+<p>最終 Flow 應為：</p>
+<div class="highlight"><pre><span></span><code>instructions
+↓
+practice（4 trials）
+↓
+formal_start
+↓
+formal_part1（24 trials）
+↓
+break_screen
+↓
+formal_part2（24 trials）
+↓
+end_screen
+</code></pre></div>
+<h3 id="3-run">3. 完整 Run<a class="headerlink" href="#3-run" title="Permanent link">&para;</a></h3>
+<p>使用測試 ID <code>participant = test09</code>、<code>session = 001</code>，其他 participant information 填測試值即可。這一次從頭做到尾，不要中途 <code>Esc</code>。</p>
+<h3 id="4">4. 完整流程檢查<a class="headerlink" href="#4" title="Permanent link">&para;</a></h3>
+<p><strong>Instructions</strong></p>
+<ul>
+<li>[ ] 一開始正常出現</li>
+<li>[ ] F = Incorrect</li>
+<li>[ ] J = Correct</li>
+<li>[ ] 按 Space 才開始</li>
+</ul>
+<p><strong>Practice</strong></p>
+<ul>
+<li>[ ] 共 4 trials</li>
+<li>[ ] P01-R / P01-I 音檔正常</li>
+<li>[ ] PS01 / PS02 句子正常</li>
+<li>[ ] fixation 正常</li>
+<li>[ ] word/chord 同步正常</li>
+<li>[ ] RT 從第五個 onset 開始</li>
+<li>[ ] f/j 正常</li>
+<li>[ ] accuracy 正常</li>
+</ul>
+<p><strong>Formal Start</strong></p>
+<ul>
+<li>[ ] Practice 後有正式開始提示</li>
+<li>[ ] 按 Space 才進入正式實驗</li>
+</ul>
+<p><strong>Formal Part 1</strong></p>
+<ul>
+<li>[ ] 共 24 trials</li>
+<li>[ ] 第一題 = <code>S20-C</code></li>
+<li>[ ] 最後一題 = <code>S12-V</code></li>
+<li>[ ] 沒有 error</li>
+</ul>
+<p><strong>Break</strong></p>
+<ul>
+<li>[ ] 第 24 題後出現</li>
+<li>[ ] 不會自己跳走</li>
+<li>[ ] 按 Space 才繼續</li>
+</ul>
+<p><strong>Formal Part 2</strong></p>
+<ul>
+<li>[ ] 第一題 = <code>S03-V</code></li>
+<li>[ ] 最後一題 = <code>S08-V</code></li>
+<li>[ ] 共 24 trials</li>
+<li>[ ] 沒有漏題</li>
+<li>[ ] 沒有重複題</li>
+</ul>
+<p><strong>End</strong></p>
+<ul>
+<li>[ ] 最後有完成畫面</li>
+<li>[ ] 按 Space 正常結束</li>
+</ul>
+<h3 id="5-csv">5. 最後檢查 CSV<a class="headerlink" href="#5-csv" title="Permanent link">&para;</a></h3>
+<p><strong>Participant information</strong>：確認有 <code>participant</code>、<code>session</code>、<code>age</code>、<code>musical_training_years</code>、<code>instrument</code>。</p>
+<p><strong>Practice</strong>：用 <code>trial_id</code> 應可找到 <code>PS01-C</code>、<code>PS01-V</code>、<code>PS02-C</code>、<code>PS02-V</code>，且 <code>music_pair = P01</code>。</p>
+<p><strong>Formal trials</strong>：正式 trials 共 48 個，第一個 = <code>S20-C</code>，第 24 個 = <code>S12-V</code>，第 25 個 = <code>S03-V</code>，最後一個 = <code>S08-V</code>。</p>
+<p>每個 formal trial 至少應有：</p>
+<div class="highlight"><pre><span></span><code>trial_id, item_id, sentence, sentence_type, correctAns,
+music_type, music_pair, audio_file, word1–word5
+</code></pre></div>
+<p>以及 Keyboard component 的 <code>.keys</code>、<code>.rt</code>、<code>.corr</code>，並確認 PsychoPy timing 欄位也有正常寫入。</p>
+<h3 id="6-trial">6. 最後確認 trial 數量<a class="headerlink" href="#6-trial" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>類型</th>
+<th style="text-align: right;">數量</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Practice</td>
+<td style="text-align: right;">4</td>
+</tr>
+<tr>
+<td>Formal</td>
+<td style="text-align: right;">48</td>
+</tr>
+<tr>
+<td>Total stimulus trials</td>
+<td style="text-align: right;">52</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition info">
+<p class="admonition-title">分析時如何排除 Practice</p>
+<p>正式分析時，Practice 可利用 <code>trial_id</code> 以 <code>PS</code> 開頭、或 <code>music_pair = P01</code> 排除。</p>
+</div>
+<hr />
+<h2 id="_2">第四階段完成檢查表<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<ul>
+<li>[ ] 任務 12：Practice trials</li>
+<li>[ ] 任務 13：Instructions</li>
+<li>[ ] 任務 14：Practice → Formal experiment 轉場</li>
+<li>[ ] 任務 15：中途休息</li>
+<li>[ ] 任務 16：Participant information</li>
+<li>[ ] 任務 17：實驗結束畫面</li>
+<li>[ ] 任務 18：完整 end-to-end 測試</li>
+</ul>
+<p>完成第四階段後，整套 PsychoPy 實驗就已經可以讓正式受試者從頭到尾完成：</p>
+<div class="highlight"><pre><span></span><code>Participant information
+↓
+Instructions
+↓
+Practice（4 trials）
+↓
+Formal Start
+↓
+Formal Part 1（24 trials）
+↓
+Break
+↓
+Formal Part 2（24 trials）
+↓
+End
+</code></pre></div>
+<p>第三階段已經驗證成功的正式 trial 核心設定不需要再修改：500 ms fixation、五個 words/chords 同步、第五個 word/chord onset 開始記錄 RT、<code>f</code>/<code>j</code> 判斷、accuracy、正式音檔配對、fixed pseudorandom order。</p>
+<p>➡️ 接下來進入第五階段：測試、檢查與正式定稿。</p>
 
 
 
@@ -506,7 +1495,7 @@
     <span class="md-icon" title="最後更新">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime" title="2026年8月9日 00:33:05 CST">2026年8月9日 00:33:05</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime" title="2026年8月16日 19:11:39 CST">2026年8月16日 19:11:39</span>
   </span>
 
     
