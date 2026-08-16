@@ -59,7 +59,7 @@
 
 ### 5. 做 4-trial regression test
 
-確認 Builder 上方為 `Run`，完整跑一次 4 trials，逐一確認以下功能仍正常：
+確認 Builder 上方為 `Run`，填入 `participant = test01`、`session = 001`，完整跑一次 4 trials，逐一確認以下功能仍正常：
 
 - 500 ms fixation
 - 音樂正常播放
@@ -402,7 +402,7 @@
 48 conditions, with 13 parameters
 ```
 
-### 5. 設定 Loop
+### 5. 設定 Loop 並先跑前 4 trials 測試
 
 在 `trials` Loop 中確認：
 
@@ -410,35 +410,40 @@
 |---|---|
 | Loop type | `sequential` |
 | Num. repeats | `1` |
-| Selected rows | 空白 |
+| Selected rows | `0,1,2,3` |
 | Random seed | 空白 |
 | Conditions | `conditions_final.xlsx` |
 
 因為 pseudorandom order 已經排好，所以不要再使用 random。
 
-### 6. 先跑前 4 trials 測試
-
-暫時在 `Selected rows` 輸入 `0:4`，其他設定維持 `sequential`、`Num. repeats = 1`、`Random seed` 空白。
-
 Run 時可填 `participant = test02`、`session = 001`。
 
-確認：
+跑完後請確認前四題順序與音檔：
 
-- [ ] 音檔正常播放
-- [ ] 句子內容正確
+```text
+S20-C → M10-I.wav
+S14-V → M07-R.wav
+S12-C → M06-I.wav
+S09-C → M05-R.wav
+```
+
+同時檢查：
+
 - [ ] 500 ms fixation 正常
-- [ ] 五個 words/chords 同步
-- [ ] 第五個 onset 後可按 `f`/`j`
-- [ ] RT 正常
-- [ ] accuracy 正常
-- [ ] 音樂不被截斷
+- [ ] 五個 words 正常呈現
+- [ ] 正式音檔有播放
+- [ ] word/chord 同步正常
+- [ ] 第五個 word 有句點
+- [ ] 第五個 onset 後可以按 `f`/`j`
+- [ ] RT、accuracy 正常
+- [ ] 音樂不會被截斷
 - [ ] 沒有 error
 
-### 7. 恢復完整 48 trials
+### 6. 恢復完整 48 trials
 
-4-trial 測試成功後，再次打開 `trials` Loop，把 `Selected rows = 0:4` 刪除、恢復空白，確認設定與步驟 5 相同，按 OK 並儲存 `.psyexp`。
+4-trial 測試成功後，再次打開 `trials` Loop，把 `Selected rows = 0,1,2,3` 刪除、恢復空白，確認設定與步驟 5 相同，按 OK 並儲存 `.psyexp`。
 
-### 8. 完整跑一次 48 trials
+### 7. 完整跑一次 48 trials
 
 Run（`participant = test03`、`session = 001`），確認：
 
@@ -453,7 +458,7 @@ Run（`participant = test03`、`session = 001`），確認：
 - [ ] 沒有 error
 - [ ] 實驗可以正常結束
 
-### 9. 檢查輸出的 CSV
+### 8. 檢查輸出的 CSV
 
 找到剛才完整 48-trial 測試產生的 CSV，確認正式條件欄位都有寫入：
 
