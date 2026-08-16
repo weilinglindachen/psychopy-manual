@@ -130,20 +130,3 @@
 3. 建立 Practice trials、Instructions、Practice → Formal experiment 轉場
 4. 加入中途休息、Participant information、實驗結束畫面
 5. 完成完整 end-to-end 測試
-
-## 建議的資料夾結構
-
-```text
-Jessy_psychopy/
-├── practice01.psyexp
-├── conditions_test.xlsx
-├── audio/
-│   ├── test_regular_3600ms.wav
-│   └── test_irregular_3600ms.wav
-└── data/
-```
-
-!!! warning "注意"
-    - `practice01.psyexp` 和 `conditions_test.xlsx` 必須放在同一層。
-    - `data` 資料夾會在實驗執行後自動建立。
-    - 不要把條件表或音檔放進 `data` 資料夾。

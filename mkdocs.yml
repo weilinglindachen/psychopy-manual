@@ -50,6 +50,7 @@ plugins:
 
 nav:
   - 首頁: index.md
+  - 開始之前：認識 PsychoPy: intro.md
   - 第一階段：純句子判斷核心: stage1.md
   - 第二階段：音樂與正式時間安排: stage2.md
   - 第三階段：擴充成 48 trials: stage3.md

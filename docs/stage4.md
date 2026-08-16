@@ -14,15 +14,7 @@ Instructions
 → End
 ```
 
-本階段包含：
-
-- [x] 任務 12：建立 Practice trials
-- [x] 任務 13：加入 Instructions
-- [x] 任務 14：建立 Practice → Formal experiment 轉場
-- [x] 任務 15：加入中途休息
-- [x] 任務 16：設定 Participant information
-- [x] 任務 17：加入實驗結束畫面
-- [x] 任務 18：完整 end-to-end 測試
+完成後，整套 PsychoPy 實驗就已經可以讓正式受試者從頭到尾完成。
 
 ---
 
