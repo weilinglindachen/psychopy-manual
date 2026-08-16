@@ -210,93 +210,15 @@
 
 此外，48 個 trials 必須全部出現一次、沒有遺漏、沒有重複，且四種條件（C+R、C+I、V+R、V+I）分散在整個實驗中。
 
-### 1. 建立 Trial_Order 工作表
+### 1. 建立 PsychoPy 最終正式檔並讀取檔案
 
-新增工作表 `Trial_Order`，建立兩欄 `order`、`trial_id`，依序填入排好的 48 筆固定順序：
-
-<div class="scrollable-table" markdown>
-
-| `order` | `trial_id` |
-|---:|---|
-| 1 | S20-C |
-| 2 | S14-V |
-| 3 | S12-C |
-| 4 | S09-C |
-| 5 | S15-V |
-| 6 | S04-C |
-| 7 | S22-V |
-| 8 | S17-C |
-| 9 | S07-V |
-| 10 | S01-C |
-| 11 | S23-V |
-| 12 | S06-V |
-| 13 | S10-C |
-| 14 | S13-V |
-| 15 | S15-C |
-| 16 | S21-V |
-| 17 | S20-V |
-| 18 | S18-C |
-| 19 | S04-V |
-| 20 | S02-C |
-| 21 | S07-C |
-| 22 | S05-V |
-| 23 | S23-C |
-| 24 | S12-V |
-| 25 | S03-V |
-| 26 | S16-C |
-| 27 | S21-C |
-| 28 | S10-V |
-| 29 | S19-V |
-| 30 | S24-C |
-| 31 | S02-V |
-| 32 | S13-C |
-| 33 | S08-C |
-| 34 | S11-V |
-| 35 | S05-C |
-| 36 | S18-V |
-| 37 | S09-V |
-| 38 | S14-C |
-| 39 | S16-V |
-| 40 | S01-V |
-| 41 | S19-C |
-| 42 | S06-C |
-| 43 | S24-V |
-| 44 | S03-C |
-| 45 | S22-C |
-| 46 | S17-V |
-| 47 | S11-C |
-| 48 | S08-V |
-
-</div>
-
-### 2. 建立 Final_Conditions 工作表
-
-新增工作表 `Final_Conditions`，第一列使用和正式條件表完全相同的 13 個欄位（A–M）。
-
-假設原始 48-trial 條件表工作表叫 `Sheet1`，`Trial_Order` 的 B 欄是 `trial_id`，在 `Final_Conditions!A2` 輸入：
-
-```excel
-=XLOOKUP(Trial_Order!B2,Sheet1!$A$2:$A$49,Sheet1!$A$2:$M$49)
-```
-
-按 Enter 後確認 A2–M2 自動帶入完整資料，再把公式往下填到第 49 列。
-
-### 3. 建立 PsychoPy 最終正式檔
-
-另外建立一個新的 Excel 檔案 `conditions_final.xlsx`，把 `Final_Conditions` 的 A1:M49 複製過去。
-
-!!! warning "使用「貼上值」，不要貼公式"
-    請使用 **Paste Values / 貼上值**，不要把 `XLOOKUP` 公式一起帶過去。`conditions_final.xlsx` 應只保留乾淨的正式 48-trial 表。
-
-### 4. 讓 PsychoPy 讀取 conditions_final.xlsx
-
-打開 `trials` Loop，把 Conditions 改成 `conditions_final.xlsx`。成功載入後應看到：
+依照上述限制排好固定順序，建立 `conditions_final.xlsx`，並在 `trials` Loop 中把 Conditions 改成這個檔案。成功載入後應看到：
 
 ```text
 48 conditions, with 13 parameters
 ```
 
-### 5. 設定 Loop 並先跑前 4 trials 測試
+### 2. 設定 Loop 並先跑前 4 trials 測試
 
 在 `trials` Loop 中確認：
 
@@ -315,10 +237,10 @@ Run 時可填 `participant = test02`、`session = 001`。
 跑完後請確認前四題順序與音檔：
 
 ```text
-S20-C → M10-I.wav
-S14-V → M07-R.wav
-S12-C → M06-I.wav
-S09-C → M05-R.wav
+S02-V → M01-I.wav
+S15-C → M08-I.wav
+S18-V → M09-R.wav
+S19-C → M10-I.wav
 ```
 
 同時檢查：
@@ -333,11 +255,11 @@ S09-C → M05-R.wav
 - [x] 音樂不會被截斷
 - [x] 沒有 error
 
-### 6. 恢復完整 48 trials
+### 3. 恢復完整 48 trials
 
-4-trial 測試成功後，再次打開 `trials` Loop，把 `Selected rows = 0,1,2,3` 刪除、恢復空白，確認設定與步驟 5 相同，按 OK 並儲存 `.psyexp`。
+4-trial 測試成功後，再次打開 `trials` Loop，把 `Selected rows = 0,1,2,3` 刪除、恢復空白，確認設定與步驟 2 相同，按 OK 並儲存 `.psyexp`。
 
-### 7. 完整跑一次 48 trials
+### 4. 完整跑一次 48 trials
 
 Run（`participant = test03`、`session = 001`），確認：
 
@@ -352,7 +274,7 @@ Run（`participant = test03`、`session = 001`），確認：
 - [x] 沒有 error
 - [x] 實驗可以正常結束
 
-### 8. 檢查輸出的 CSV
+### 5. 檢查輸出的 CSV
 
 找到剛才完整 48-trial 測試產生的 CSV，確認正式條件欄位都有寫入：
 
