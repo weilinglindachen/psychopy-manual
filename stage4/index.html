@@ -530,14 +530,14 @@
 → End
 </code></pre></div>
 <p>本階段包含：</p>
-<ul>
-<li>[x] 任務 12：建立 Practice trials</li>
-<li>[x] 任務 13：加入 Instructions</li>
-<li>[x] 任務 14：建立 Practice → Formal experiment 轉場</li>
-<li>[x] 任務 15：加入中途休息</li>
-<li>[x] 任務 16：設定 Participant information</li>
-<li>[x] 任務 17：加入實驗結束畫面</li>
-<li>[x] 任務 18：完整 end-to-end 測試</li>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> 任務 12：建立 Practice trials</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> 任務 13：加入 Instructions</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> 任務 14：建立 Practice → Formal experiment 轉場</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> 任務 15：加入中途休息</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> 任務 16：設定 Participant information</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> 任務 17：加入實驗結束畫面</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> 任務 18：完整 end-to-end 測試</li>
 </ul>
 <hr />
 <h2 id="12-practice-trials">任務 12：建立 Practice trials<a class="headerlink" href="#12-practice-trials" title="Permanent link">&para;</a></h2>
@@ -759,20 +759,20 @@
 </code></pre></div>
 <h3 id="5-practice">5. 測試 Practice<a class="headerlink" href="#5-practice" title="Permanent link">&para;</a></h3>
 <p>Run 時可填 <code>participant = test04</code>、<code>session = 001</code>，確認：</p>
-<ul>
-<li>[x] PS01-C → P01-R</li>
-<li>[x] PS01-V → P01-I</li>
-<li>[x] PS02-C → P01-I</li>
-<li>[x] PS02-V → P01-R</li>
-<li>[x] 500 ms fixation 正常</li>
-<li>[x] 五個 words 正常呈現</li>
-<li>[x] <code>word5</code> 有句點</li>
-<li>[x] P01 音檔正常播放</li>
-<li>[x] word/chord 同步正常</li>
-<li>[x] 第五個 onset 後可以按 <code>f</code>/<code>j</code></li>
-<li>[x] RT 正常</li>
-<li>[x] accuracy 正常</li>
-<li>[x] Practice 結束後能順利接到正式 trials</li>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> PS01-C → P01-R</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> PS01-V → P01-I</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> PS02-C → P01-I</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> PS02-V → P01-R</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> 500 ms fixation 正常</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> 五個 words 正常呈現</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <code>word5</code> 有句點</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> P01 音檔正常播放</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> word/chord 同步正常</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> 第五個 onset 後可以按 <code>f</code>/<code>j</code></li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> RT 正常</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> accuracy 正常</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Practice 結束後能順利接到正式 trials</li>
 </ul>
 <h3 id="6-practice">6. 確認 Practice 資料<a class="headerlink" href="#6-practice" title="Permanent link">&para;</a></h3>
 <p>打開測試 CSV，確認可用 <code>trial_id</code> 找到 <code>PS01-C</code>、<code>PS01-V</code>、<code>PS02-C</code>、<code>PS02-V</code>，且這些列都有 response、RT、correct/incorrect、<code>music_type</code>、<code>music_pair = P01</code>。</p>
@@ -860,12 +860,12 @@ Press <strong>J</strong> if the sentence is correct.</p>
 <p>這樣 Instructions 會一直留在畫面上，直到受試者按 Space。</p>
 <h3 id="4-instructions">4. 測試 Instructions<a class="headerlink" href="#4-instructions" title="Permanent link">&para;</a></h3>
 <p>Run 時可填 <code>participant = test05</code>、<code>session = 001</code>，確認：</p>
-<ul>
-<li>[x] Instructions 最先出現</li>
-<li>[x] 畫面不會自動跳走</li>
-<li>[x] 其他按鍵不會進入下一頁</li>
-<li>[x] 按 Space 才進入 Practice</li>
-<li>[x] Practice 可正常開始</li>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Instructions 最先出現</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> 畫面不會自動跳走</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> 其他按鍵不會進入下一頁</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> 按 Space 才進入 Practice</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Practice 可正常開始</li>
 </ul>
 <hr />
 <h2 id="14-practice-formal-experiment">任務 14：建立 Practice → Formal experiment 轉場<a class="headerlink" href="#14-practice-formal-experiment" title="Permanent link">&para;</a></h2>
@@ -1178,10 +1178,10 @@ Press <strong>J</strong> if the sentence is correct.</p>
 <div class="highlight"><pre><span></span><code>Practice → Formal Start → S12-V → Break → S03-V
 </code></pre></div>
 <p>Break 應：</p>
-<ul>
-<li>[x] 不會自己消失</li>
-<li>[x] 按 Space 才繼續</li>
-<li>[x] Break 後正常進入 S03-V</li>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> 不會自己消失</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> 按 Space 才繼續</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Break 後正常進入 S03-V</li>
 </ul>
 <div class="admonition warning">
 <p class="admonition-title">測試完成後記得清空 Selected rows</p>
@@ -1360,53 +1360,53 @@ end_screen
 <p>使用測試 ID <code>participant = test09</code>、<code>session = 001</code>，其他 participant information 填測試值即可。這一次從頭做到尾，不要中途 <code>Esc</code>。</p>
 <h3 id="4">4. 完整流程檢查<a class="headerlink" href="#4" title="Permanent link">&para;</a></h3>
 <p><strong>Instructions</strong></p>
-<ul>
-<li>[x] 一開始正常出現</li>
-<li>[x] F = Incorrect</li>
-<li>[x] J = Correct</li>
-<li>[x] 按 Space 才開始</li>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> 一開始正常出現</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> F = Incorrect</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> J = Correct</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> 按 Space 才開始</li>
 </ul>
 <p><strong>Practice</strong></p>
-<ul>
-<li>[x] 共 4 trials</li>
-<li>[x] P01-R / P01-I 音檔正常</li>
-<li>[x] PS01 / PS02 句子正常</li>
-<li>[x] fixation 正常</li>
-<li>[x] word/chord 同步正常</li>
-<li>[x] RT 從第五個 onset 開始</li>
-<li>[x] f/j 正常</li>
-<li>[x] accuracy 正常</li>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> 共 4 trials</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> P01-R / P01-I 音檔正常</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> PS01 / PS02 句子正常</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> fixation 正常</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> word/chord 同步正常</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> RT 從第五個 onset 開始</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> f/j 正常</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> accuracy 正常</li>
 </ul>
 <p><strong>Formal Start</strong></p>
-<ul>
-<li>[x] Practice 後有正式開始提示</li>
-<li>[x] 按 Space 才進入正式實驗</li>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Practice 後有正式開始提示</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> 按 Space 才進入正式實驗</li>
 </ul>
 <p><strong>Formal Part 1</strong></p>
-<ul>
-<li>[x] 共 24 trials</li>
-<li>[x] 第一題 = <code>S20-C</code></li>
-<li>[x] 最後一題 = <code>S12-V</code></li>
-<li>[x] 沒有 error</li>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> 共 24 trials</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> 第一題 = <code>S20-C</code></li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> 最後一題 = <code>S12-V</code></li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> 沒有 error</li>
 </ul>
 <p><strong>Break</strong></p>
-<ul>
-<li>[x] 第 24 題後出現</li>
-<li>[x] 不會自己跳走</li>
-<li>[x] 按 Space 才繼續</li>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> 第 24 題後出現</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> 不會自己跳走</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> 按 Space 才繼續</li>
 </ul>
 <p><strong>Formal Part 2</strong></p>
-<ul>
-<li>[x] 第一題 = <code>S03-V</code></li>
-<li>[x] 最後一題 = <code>S08-V</code></li>
-<li>[x] 共 24 trials</li>
-<li>[x] 沒有漏題</li>
-<li>[x] 沒有重複題</li>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> 第一題 = <code>S03-V</code></li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> 最後一題 = <code>S08-V</code></li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> 共 24 trials</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> 沒有漏題</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> 沒有重複題</li>
 </ul>
 <p><strong>End</strong></p>
-<ul>
-<li>[x] 最後有完成畫面</li>
-<li>[x] 按 Space 正常結束</li>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> 最後有完成畫面</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> 按 Space 正常結束</li>
 </ul>
 <h3 id="5-csv">5. 最後檢查 CSV<a class="headerlink" href="#5-csv" title="Permanent link">&para;</a></h3>
 <p><strong>Participant information</strong>：確認有 <code>participant</code>、<code>session</code>、<code>age</code>、<code>musical_training_years</code>、<code>instrument</code>。</p>
@@ -1446,14 +1446,14 @@ music_type, music_pair, audio_file, word1–word5
 </div>
 <hr />
 <h2 id="_2">第四階段完成檢查表<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
-<ul>
-<li>[x] 任務 12：Practice trials</li>
-<li>[x] 任務 13：Instructions</li>
-<li>[x] 任務 14：Practice → Formal experiment 轉場</li>
-<li>[x] 任務 15：中途休息</li>
-<li>[x] 任務 16：Participant information</li>
-<li>[x] 任務 17：實驗結束畫面</li>
-<li>[x] 任務 18：完整 end-to-end 測試</li>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> 任務 12：Practice trials</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> 任務 13：Instructions</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> 任務 14：Practice → Formal experiment 轉場</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> 任務 15：中途休息</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> 任務 16：Participant information</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> 任務 17：實驗結束畫面</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> 任務 18：完整 end-to-end 測試</li>
 </ul>
 <p>完成第四階段後，整套 PsychoPy 實驗就已經可以讓正式受試者從頭到尾完成：</p>
 <div class="highlight"><pre><span></span><code>Participant information
