@@ -200,10 +200,25 @@ Run 時可填 `participant = test05`、`session = 001`，確認：
 
 ### 1. 新增 formal_start Routine
 
-在 `practice` loop 後面、正式 trials 前面新增 `formal_start`。Flow 變成：
+在 `practice` loop 後面、正式 trials 前面新增 `formal_start`。
+
+要把 `formal_start` 放在中間，請這樣做：
+
+1. 在 Flow 裡找到 `practice` loop 的右邊界。
+2. 再找到正式 trials loop 的左邊界。
+3. 點兩個 loop 中間那一小段水平線。
+4. 點 `Insert Routine`。
+5. 選 `New`。
+6. Routine 名稱輸入：
+
+    ```text
+    formal_start
+    ```
+
+新增成功後，Flow 應該變成：
 
 ```text
-instructions → practice → formal_start → formal trials
+practice loop → formal_start → formal trials loop
 ```
 
 ### 2. 加入 Text component
