@@ -16,13 +16,13 @@ Instructions
 
 本階段包含：
 
-- [ ] 任務 12：建立 Practice trials
-- [ ] 任務 13：加入 Instructions
-- [ ] 任務 14：建立 Practice → Formal experiment 轉場
-- [ ] 任務 15：加入中途休息
-- [ ] 任務 16：設定 Participant information
-- [ ] 任務 17：加入實驗結束畫面
-- [ ] 任務 18：完整 end-to-end 測試
+- [x] 任務 12：建立 Practice trials
+- [x] 任務 13：加入 Instructions
+- [x] 任務 14：建立 Practice → Formal experiment 轉場
+- [x] 任務 15：加入中途休息
+- [x] 任務 16：設定 Participant information
+- [x] 任務 17：加入實驗結束畫面
+- [x] 任務 18：完整 end-to-end 測試
 
 ---
 
@@ -121,19 +121,19 @@ practice loop → formal trials loop
 
 Run 時可填 `participant = test04`、`session = 001`，確認：
 
-- [ ] PS01-C → P01-R
-- [ ] PS01-V → P01-I
-- [ ] PS02-C → P01-I
-- [ ] PS02-V → P01-R
-- [ ] 500 ms fixation 正常
-- [ ] 五個 words 正常呈現
-- [ ] `word5` 有句點
-- [ ] P01 音檔正常播放
-- [ ] word/chord 同步正常
-- [ ] 第五個 onset 後可以按 `f`/`j`
-- [ ] RT 正常
-- [ ] accuracy 正常
-- [ ] Practice 結束後能順利接到正式 trials
+- [x] PS01-C → P01-R
+- [x] PS01-V → P01-I
+- [x] PS02-C → P01-I
+- [x] PS02-V → P01-R
+- [x] 500 ms fixation 正常
+- [x] 五個 words 正常呈現
+- [x] `word5` 有句點
+- [x] P01 音檔正常播放
+- [x] word/chord 同步正常
+- [x] 第五個 onset 後可以按 `f`/`j`
+- [x] RT 正常
+- [x] accuracy 正常
+- [x] Practice 結束後能順利接到正式 trials
 
 ### 6. 確認 Practice 資料
 
@@ -200,11 +200,11 @@ Text 內容：
 
 Run 時可填 `participant = test05`、`session = 001`，確認：
 
-- [ ] Instructions 最先出現
-- [ ] 畫面不會自動跳走
-- [ ] 其他按鍵不會進入下一頁
-- [ ] 按 Space 才進入 Practice
-- [ ] Practice 可正常開始
+- [x] Instructions 最先出現
+- [x] 畫面不會自動跳走
+- [x] 其他按鍵不會進入下一頁
+- [x] 按 Space 才進入 Practice
+- [x] Practice 可正常開始
 
 ---
 
@@ -383,9 +383,9 @@ Practice → Formal Start → S12-V → Break → S03-V
 
 Break 應：
 
-- [ ] 不會自己消失
-- [ ] 按 Space 才繼續
-- [ ] Break 後正常進入 S03-V
+- [x] 不會自己消失
+- [x] 按 Space 才繼續
+- [x] Break 後正常進入 S03-V
 
 !!! warning "測試完成後記得清空 Selected rows"
     `formal_part1`、`formal_part2` 的 `Selected rows` 都要清空，恢復成空白，否則之後只會跑到剛才指定的那一列。
@@ -495,52 +495,52 @@ end_screen
 
 **Instructions**
 
-- [ ] 一開始正常出現
-- [ ] F = Incorrect
-- [ ] J = Correct
-- [ ] 按 Space 才開始
+- [x] 一開始正常出現
+- [x] F = Incorrect
+- [x] J = Correct
+- [x] 按 Space 才開始
 
 **Practice**
 
-- [ ] 共 4 trials
-- [ ] P01-R / P01-I 音檔正常
-- [ ] PS01 / PS02 句子正常
-- [ ] fixation 正常
-- [ ] word/chord 同步正常
-- [ ] RT 從第五個 onset 開始
-- [ ] f/j 正常
-- [ ] accuracy 正常
+- [x] 共 4 trials
+- [x] P01-R / P01-I 音檔正常
+- [x] PS01 / PS02 句子正常
+- [x] fixation 正常
+- [x] word/chord 同步正常
+- [x] RT 從第五個 onset 開始
+- [x] f/j 正常
+- [x] accuracy 正常
 
 **Formal Start**
 
-- [ ] Practice 後有正式開始提示
-- [ ] 按 Space 才進入正式實驗
+- [x] Practice 後有正式開始提示
+- [x] 按 Space 才進入正式實驗
 
 **Formal Part 1**
 
-- [ ] 共 24 trials
-- [ ] 第一題 = `S20-C`
-- [ ] 最後一題 = `S12-V`
-- [ ] 沒有 error
+- [x] 共 24 trials
+- [x] 第一題 = `S20-C`
+- [x] 最後一題 = `S12-V`
+- [x] 沒有 error
 
 **Break**
 
-- [ ] 第 24 題後出現
-- [ ] 不會自己跳走
-- [ ] 按 Space 才繼續
+- [x] 第 24 題後出現
+- [x] 不會自己跳走
+- [x] 按 Space 才繼續
 
 **Formal Part 2**
 
-- [ ] 第一題 = `S03-V`
-- [ ] 最後一題 = `S08-V`
-- [ ] 共 24 trials
-- [ ] 沒有漏題
-- [ ] 沒有重複題
+- [x] 第一題 = `S03-V`
+- [x] 最後一題 = `S08-V`
+- [x] 共 24 trials
+- [x] 沒有漏題
+- [x] 沒有重複題
 
 **End**
 
-- [ ] 最後有完成畫面
-- [ ] 按 Space 正常結束
+- [x] 最後有完成畫面
+- [x] 按 Space 正常結束
 
 ### 5. 最後檢查 CSV
 
@@ -574,13 +574,13 @@ music_type, music_pair, audio_file, word1–word5
 
 ## 第四階段完成檢查表
 
-- [ ] 任務 12：Practice trials
-- [ ] 任務 13：Instructions
-- [ ] 任務 14：Practice → Formal experiment 轉場
-- [ ] 任務 15：中途休息
-- [ ] 任務 16：Participant information
-- [ ] 任務 17：實驗結束畫面
-- [ ] 任務 18：完整 end-to-end 測試
+- [x] 任務 12：Practice trials
+- [x] 任務 13：Instructions
+- [x] 任務 14：Practice → Formal experiment 轉場
+- [x] 任務 15：中途休息
+- [x] 任務 16：Participant information
+- [x] 任務 17：實驗結束畫面
+- [x] 任務 18：完整 end-to-end 測試
 
 完成第四階段後，整套 PsychoPy 實驗就已經可以讓正式受試者從頭到尾完成：
 
@@ -604,4 +604,4 @@ End
 
 第三階段已經驗證成功的正式 trial 核心設定不需要再修改：500 ms fixation、五個 words/chords 同步、第五個 word/chord onset 開始記錄 RT、`f`/`j` 判斷、accuracy、正式音檔配對、fixed pseudorandom order。
 
-➡️ 接下來進入第五階段：測試、檢查與正式定稿。
+➡️ 接下來可以找同學或朋友實際跑一次，做 pilot test。

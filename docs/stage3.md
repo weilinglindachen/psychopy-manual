@@ -228,18 +228,18 @@
 
 完成後請逐項確認：
 
-- [ ] 共有 48 trials
-- [ ] S01–S24 每個 item 都有 C/V 兩版
-- [ ] `correctAns`：C = j；V = f
-- [ ] 每個句子都有 5 words
-- [ ] `sentence` 與 `word1`–`word5` 一致
-- [ ] `music_type` 只有 R/I
-- [ ] `music_pair` 只有 M01–M12
-- [ ] `audio_file` 與 `music_type`、`music_pair` 一致
-- [ ] 所有 `audio_file` 都以 `audio/` 開頭
-- [ ] 所有正式音檔都是 `.wav`
-- [ ] 沒有空白欄位
-- [ ] 沒有漏題或重複 trial
+- [x] 共有 48 trials
+- [x] S01–S24 每個 item 都有 C/V 兩版
+- [x] `correctAns`：C = j；V = f
+- [x] 每個句子都有 5 words
+- [x] `sentence` 與 `word1`–`word5` 一致
+- [x] `music_type` 只有 R/I
+- [x] `music_pair` 只有 M01–M12
+- [x] `audio_file` 與 `music_type`、`music_pair` 一致
+- [x] 所有 `audio_file` 都以 `audio/` 開頭
+- [x] 所有正式音檔都是 `.wav`
+- [x] 沒有空白欄位
+- [x] 沒有漏題或重複 trial
 
 ---
 
@@ -291,14 +291,14 @@
 
 ### 任務 10 完成標準
 
-- [ ] C + R = 12
-- [ ] C + I = 12
-- [ ] V + R = 12
-- [ ] V + I = 12
-- [ ] C = 24
-- [ ] V = 24
-- [ ] R = 24
-- [ ] I = 24
+- [x] C + R = 12
+- [x] C + I = 12
+- [x] V + R = 12
+- [x] V + I = 12
+- [x] C = 24
+- [x] V = 24
+- [x] R = 24
+- [x] I = 24
 
 ---
 
@@ -429,15 +429,15 @@ S09-C → M05-R.wav
 
 同時檢查：
 
-- [ ] 500 ms fixation 正常
-- [ ] 五個 words 正常呈現
-- [ ] 正式音檔有播放
-- [ ] word/chord 同步正常
-- [ ] 第五個 word 有句點
-- [ ] 第五個 onset 後可以按 `f`/`j`
-- [ ] RT、accuracy 正常
-- [ ] 音樂不會被截斷
-- [ ] 沒有 error
+- [x] 500 ms fixation 正常
+- [x] 五個 words 正常呈現
+- [x] 正式音檔有播放
+- [x] word/chord 同步正常
+- [x] 第五個 word 有句點
+- [x] 第五個 onset 後可以按 `f`/`j`
+- [x] RT、accuracy 正常
+- [x] 音樂不會被截斷
+- [x] 沒有 error
 
 ### 6. 恢復完整 48 trials
 
@@ -447,16 +447,16 @@ S09-C → M05-R.wav
 
 Run（`participant = test03`、`session = 001`），確認：
 
-- [ ] 48 trials 全部跑完
-- [ ] 所有正式音檔都能找到
-- [ ] 所有句子正常顯示
-- [ ] word/chord 同步正常
-- [ ] fixation timing 正常
-- [ ] 第五個 onset 後才開始反應
-- [ ] `f`/`j` 正常記錄
-- [ ] 音樂不會被截斷
-- [ ] 沒有 error
-- [ ] 實驗可以正常結束
+- [x] 48 trials 全部跑完
+- [x] 所有正式音檔都能找到
+- [x] 所有句子正常顯示
+- [x] word/chord 同步正常
+- [x] fixation timing 正常
+- [x] 第五個 onset 後才開始反應
+- [x] `f`/`j` 正常記錄
+- [x] 音樂不會被截斷
+- [x] 沒有 error
+- [x] 實驗可以正常結束
 
 ### 8. 檢查輸出的 CSV
 
@@ -475,17 +475,17 @@ music_type, music_pair, audio_file, word1–word5
 
 最後確認：
 
-- [ ] CSV 有 48 個正式 trials
-- [ ] 沒有漏 trial
-- [ ] 沒有重複 trial
-- [ ] PsychoPy timing 欄位有正常寫入
+- [x] CSV 有 48 個正式 trials
+- [x] 沒有漏 trial
+- [x] 沒有重複 trial
+- [x] PsychoPy timing 欄位有正常寫入
 
 ---
 
 ## 第三階段完成檢查表
 
-- [ ] 任務 9：建立完整 48-trial 條件表
-- [ ] 任務 10：檢查四種條件是否平衡
-- [ ] 任務 11：設定固定 pseudorandom trial order，並完成 48-trial 正式測試與 CSV 驗證
+- [x] 任務 9：建立完整 48-trial 條件表
+- [x] 任務 10：檢查四種條件是否平衡
+- [x] 任務 11：設定固定 pseudorandom trial order，並完成 48-trial 正式測試與 CSV 驗證
 
 ➡️ 接下來進入第四階段：完成受試者實際看到的實驗。
