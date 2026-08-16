@@ -82,9 +82,7 @@
 | C | `sentence_type = C`，`correctAns = j` |
 | V | `sentence_type = V`，`correctAns = f` |
 
-完整 48-trial 骨架如下：
-
-<div class="scrollable-table" markdown>
+示意如下：
 
 | A `trial_id` | B `item_id` | D `sentence_type` | E `correctAns` |
 |---|---|---|---|
@@ -92,52 +90,8 @@
 | S01-V | S01 | V | f |
 | S02-C | S02 | C | j |
 | S02-V | S02 | V | f |
-| S03-C | S03 | C | j |
-| S03-V | S03 | V | f |
-| S04-C | S04 | C | j |
-| S04-V | S04 | V | f |
-| S05-C | S05 | C | j |
-| S05-V | S05 | V | f |
-| S06-C | S06 | C | j |
-| S06-V | S06 | V | f |
-| S07-C | S07 | C | j |
-| S07-V | S07 | V | f |
-| S08-C | S08 | C | j |
-| S08-V | S08 | V | f |
-| S09-C | S09 | C | j |
-| S09-V | S09 | V | f |
-| S10-C | S10 | C | j |
-| S10-V | S10 | V | f |
-| S11-C | S11 | C | j |
-| S11-V | S11 | V | f |
-| S12-C | S12 | C | j |
-| S12-V | S12 | V | f |
-| S13-C | S13 | C | j |
-| S13-V | S13 | V | f |
-| S14-C | S14 | C | j |
-| S14-V | S14 | V | f |
-| S15-C | S15 | C | j |
-| S15-V | S15 | V | f |
-| S16-C | S16 | C | j |
-| S16-V | S16 | V | f |
-| S17-C | S17 | C | j |
-| S17-V | S17 | V | f |
-| S18-C | S18 | C | j |
-| S18-V | S18 | V | f |
-| S19-C | S19 | C | j |
-| S19-V | S19 | V | f |
-| S20-C | S20 | C | j |
-| S20-V | S20 | V | f |
-| S21-C | S21 | C | j |
-| S21-V | S21 | V | f |
-| S22-C | S22 | C | j |
-| S22-V | S22 | V | f |
-| S23-C | S23 | C | j |
-| S23-V | S23 | V | f |
-| S24-C | S24 | C | j |
-| S24-V | S24 | V | f |
 
-</div>
+依此規則建立 `S01-C`／`S01-V` 到 `S24-C`／`S24-V`，共 48 trials。
 
 完成後應有：標題列 + 48 trials = 共 49 列。
 
@@ -164,60 +118,14 @@
 
 依下表填 F `music_type`、G `music_pair`、H `audio_file`：
 
-<div class="scrollable-table" markdown>
-
 | A `trial_id` | D `sentence_type` | F `music_type` | G `music_pair` | H `audio_file` |
 |---|---|---|---|---|
 | S01-C | C | R | M01 | `audio/M01-R.wav` |
 | S01-V | V | I | M01 | `audio/M01-I.wav` |
 | S02-C | C | I | M01 | `audio/M01-I.wav` |
 | S02-V | V | R | M01 | `audio/M01-R.wav` |
-| S03-C | C | R | M02 | `audio/M02-R.wav` |
-| S03-V | V | I | M02 | `audio/M02-I.wav` |
-| S04-C | C | I | M02 | `audio/M02-I.wav` |
-| S04-V | V | R | M02 | `audio/M02-R.wav` |
-| S05-C | C | R | M03 | `audio/M03-R.wav` |
-| S05-V | V | I | M03 | `audio/M03-I.wav` |
-| S06-C | C | I | M03 | `audio/M03-I.wav` |
-| S06-V | V | R | M03 | `audio/M03-R.wav` |
-| S07-C | C | R | M04 | `audio/M04-R.wav` |
-| S07-V | V | I | M04 | `audio/M04-I.wav` |
-| S08-C | C | I | M04 | `audio/M04-I.wav` |
-| S08-V | V | R | M04 | `audio/M04-R.wav` |
-| S09-C | C | R | M05 | `audio/M05-R.wav` |
-| S09-V | V | I | M05 | `audio/M05-I.wav` |
-| S10-C | C | I | M05 | `audio/M05-I.wav` |
-| S10-V | V | R | M05 | `audio/M05-R.wav` |
-| S11-C | C | R | M06 | `audio/M06-R.wav` |
-| S11-V | V | I | M06 | `audio/M06-I.wav` |
-| S12-C | C | I | M06 | `audio/M06-I.wav` |
-| S12-V | V | R | M06 | `audio/M06-R.wav` |
-| S13-C | C | R | M07 | `audio/M07-R.wav` |
-| S13-V | V | I | M07 | `audio/M07-I.wav` |
-| S14-C | C | I | M07 | `audio/M07-I.wav` |
-| S14-V | V | R | M07 | `audio/M07-R.wav` |
-| S15-C | C | R | M08 | `audio/M08-R.wav` |
-| S15-V | V | I | M08 | `audio/M08-I.wav` |
-| S16-C | C | I | M08 | `audio/M08-I.wav` |
-| S16-V | V | R | M08 | `audio/M08-R.wav` |
-| S17-C | C | R | M09 | `audio/M09-R.wav` |
-| S17-V | V | I | M09 | `audio/M09-I.wav` |
-| S18-C | C | I | M09 | `audio/M09-I.wav` |
-| S18-V | V | R | M09 | `audio/M09-R.wav` |
-| S19-C | C | R | M10 | `audio/M10-R.wav` |
-| S19-V | V | I | M10 | `audio/M10-I.wav` |
-| S20-C | C | I | M10 | `audio/M10-I.wav` |
-| S20-V | V | R | M10 | `audio/M10-R.wav` |
-| S21-C | C | R | M11 | `audio/M11-R.wav` |
-| S21-V | V | I | M11 | `audio/M11-I.wav` |
-| S22-C | C | I | M11 | `audio/M11-I.wav` |
-| S22-V | V | R | M11 | `audio/M11-R.wav` |
-| S23-C | C | R | M12 | `audio/M12-R.wav` |
-| S23-V | V | I | M12 | `audio/M12-I.wav` |
-| S24-C | C | I | M12 | `audio/M12-I.wav` |
-| S24-V | V | R | M12 | `audio/M12-R.wav` |
 
-</div>
+依此規則將 S03–S24 對應到 M02–M12（每個 music pair 對應兩個 item，共 4 個 trials）。
 
 !!! info "注意"
     - `P01` 是 practice，不放入正式 48 trials
@@ -245,28 +153,7 @@
 
 ## 任務 10：檢查四種條件是否平衡
 
-### 1. 新增 Balance_Check 工作表
-
-在 Excel 下方新增一個工作表，命名為 `Balance_Check`，建立：
-
-| A | B |
-|---|---|
-| Condition | Count |
-| C + R | |
-| C + I | |
-| V + R | |
-| V + I | |
-
-假設正式條件表工作表名稱為 `Sheet1`，依序在 B2–B5 輸入：
-
-```excel
-=COUNTIFS(Sheet1!D:D,"C",Sheet1!F:F,"R")
-=COUNTIFS(Sheet1!D:D,"C",Sheet1!F:F,"I")
-=COUNTIFS(Sheet1!D:D,"V",Sheet1!F:F,"R")
-=COUNTIFS(Sheet1!D:D,"V",Sheet1!F:F,"I")
-```
-
-正確結果應為四種條件各 12：
+用任何方式確認（例如手動數、或用 Excel 公式），48 個 trials 的四種條件應該平均分布：
 
 | Condition | Count |
 |---|---:|
@@ -275,26 +162,33 @@
 | V + R | 12 |
 | V + I | 12 |
 
-### 2. 檢查整體 C/V 與 R/I
+每種條件內，subject 為 singular／plural 的句子也應該各占一半：
 
-在同一張 `Balance_Check` 工作表加入：
+| Condition | Singular | Plural | Total |
+|---|---:|---:|---:|
+| C + R | 6 | 6 | 12 |
+| C + I | 6 | 6 | 12 |
+| V + R | 6 | 6 | 12 |
+| V + I | 6 | 6 | 12 |
 
-| Sentence type | Count | 公式 |
-|---|---:|---|
-| C | 24 | `=COUNTIF(Sheet1!D:D,"C")` |
-| V | 24 | `=COUNTIF(Sheet1!D:D,"V")` |
+整體 C/V 與 R/I 也應各占一半：
 
-| Music type | Count | 公式 |
-|---|---:|---|
-| R | 24 | `=COUNTIF(Sheet1!F:F,"R")` |
-| I | 24 | `=COUNTIF(Sheet1!F:F,"I")` |
+| Sentence type | Count |
+|---|---:|
+| C | 24 |
+| V | 24 |
+
+| Music type | Count |
+|---|---:|
+| R | 24 |
+| I | 24 |
 
 ### 任務 10 完成標準
 
-- [x] C + R = 12
-- [x] C + I = 12
-- [x] V + R = 12
-- [x] V + I = 12
+- [x] C + R = 12（6 singular + 6 plural）
+- [x] C + I = 12（6 singular + 6 plural）
+- [x] V + R = 12（6 singular + 6 plural）
+- [x] V + I = 12（6 singular + 6 plural）
 - [x] C = 24
 - [x] V = 24
 - [x] R = 24
