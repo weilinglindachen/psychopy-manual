@@ -2,6 +2,7 @@
 site/
 PsychoPy_實驗建置手冊_第一到第二階段_除錯整合版(2).md
 第三階段操作流程.md
+第四階段操作流程.md
 data/
 __pycache__/
 *.pyc
