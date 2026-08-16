@@ -145,7 +145,19 @@ Run 時可填 `participant = test04`、`session = 001`，確認：
 
 ### 1. 建立 instructions Routine
 
-在 Flow 最前面、`practice` loop 前面新增 `instructions`。Flow 概念上變成：
+在 Flow 最前面、`practice` loop 前面新增 `instructions`。
+
+1. 在 Flow 最左邊，找到 `practice` loop 的左邊界。
+2. 點 `practice` loop 前面那一小段水平線。
+3. 選 `Insert Routine`。
+4. 選 `New`。
+5. 名稱輸入：
+
+    ```text
+    instructions
+    ```
+
+Flow 概念上變成：
 
 ```text
 instructions → practice → formal trials
