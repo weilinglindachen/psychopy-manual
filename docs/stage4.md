@@ -101,6 +101,10 @@ trial → formal trials
 | Selected rows | 空白 |
 | Random seed | 空白 |
 
+完成後 Flow 應該看起來像這樣，`practice` 與 `trials` 分別各自包住一個 `trial` Routine：
+
+[![Flow 中 practice loop 與 trials loop 分別包住各自的 trial Routine](assets/practice.png)](assets/practice.png){: .screenshot-link target="_blank" }
+
 成功載入後應看到：
 
 ```text
