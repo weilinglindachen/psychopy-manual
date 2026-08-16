@@ -264,7 +264,7 @@ Run 時可填 `participant = test06`、`session = 001`，確認流程：
 5. Space
 6. 第一個 formal trial
 
-第一個正式 trial 應為 `S20-C`，音檔為 `M10-I.wav`。
+第一個正式 trial 應為 `S02-V`，音檔為 `M01-I.wav`。
 
 ---
 
@@ -282,13 +282,13 @@ Run 時可填 `participant = test06`、`session = 001`，確認流程：
 
 | 檔案 | 內容 | 第一題 | 最後一題 |
 |---|---|---|---|
-| `conditions_final_part1.xlsx` | 標題列 + 第 1–24 個 formal trials | S20-C | S12-V |
-| `conditions_final_part2.xlsx` | 標題列 + 第 25–48 個 formal trials | S03-V | S08-V |
+| `conditions_final_part1.xlsx` | 標題列 + 第 1–24 個 formal trials | S02-V | S12-C |
+| `conditions_final_part2.xlsx` | 標題列 + 第 25–48 個 formal trials | S22-C | S20-C |
 
 因此 Break 應位於：
 
 ```text
-S12-V → Break → S03-V
+S12-C → Break → S22-C
 ```
 
 ### 2. 設定 formal_part1
@@ -353,10 +353,10 @@ Text 內容：
 
 | 檔案 | 第一題 | 最後一題 | Trial 數 |
 |---|---|---|---:|
-| `conditions_final_part1.xlsx` | S20-C | S12-V | 24 |
-| `conditions_final_part2.xlsx` | S03-V | S08-V | 24 |
+| `conditions_final_part1.xlsx` | S02-V | S12-C | 24 |
+| `conditions_final_part2.xlsx` | S22-C | S20-C | 24 |
 
-Break 必須出現在 `S12-V → Break → S03-V`。
+Break 必須出現在 `S12-C → Break → S22-C`。
 
 ### 6. 快速測試 Break
 
@@ -370,14 +370,14 @@ Break 必須出現在 `S12-V → Break → S03-V`。
 Run 時可填 `participant = test07`、`session = 001`，確認流程為：
 
 ```text
-Practice → Formal Start → S12-V → Break → S03-V
+Practice → Formal Start → S12-C → Break → S22-C
 ```
 
 Break 應：
 
 - [x] 不會自己消失
 - [x] 按 Space 才繼續
-- [x] Break 後正常進入 S03-V
+- [x] Break 後正常進入 S22-C
 
 !!! warning "測試完成後記得清空 Selected rows"
     `formal_part1`、`formal_part2` 的 `Selected rows` 都要清空，恢復成空白，否則之後只會跑到剛才指定的那一列。
@@ -511,8 +511,8 @@ end_screen
 **Formal Part 1**
 
 - [x] 共 24 trials
-- [x] 第一題 = `S20-C`
-- [x] 最後一題 = `S12-V`
+- [x] 第一題 = `S02-V`
+- [x] 最後一題 = `S12-C`
 - [x] 沒有 error
 
 **Break**
@@ -523,8 +523,8 @@ end_screen
 
 **Formal Part 2**
 
-- [x] 第一題 = `S03-V`
-- [x] 最後一題 = `S08-V`
+- [x] 第一題 = `S22-C`
+- [x] 最後一題 = `S20-C`
 - [x] 共 24 trials
 - [x] 沒有漏題
 - [x] 沒有重複題
@@ -540,7 +540,7 @@ end_screen
 
 **Practice**：用 `trial_id` 應可找到 `PS01-C`、`PS01-V`、`PS02-C`、`PS02-V`，且 `music_pair = P01`。
 
-**Formal trials**：正式 trials 共 48 個，第一個 = `S20-C`，第 24 個 = `S12-V`，第 25 個 = `S03-V`，最後一個 = `S08-V`。
+**Formal trials**：正式 trials 共 48 個，第一個 = `S02-V`，第 24 個 = `S12-C`，第 25 個 = `S22-C`，第 48 個／最後一個 = `S20-C`。
 
 每個 formal trial 至少應有：
 

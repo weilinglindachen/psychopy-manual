@@ -120,10 +120,10 @@
 
 | A `trial_id` | D `sentence_type` | F `music_type` | G `music_pair` | H `audio_file` |
 |---|---|---|---|---|
-| S01-C | C | R | M01 | `audio/M01-R.wav` |
-| S01-V | V | I | M01 | `audio/M01-I.wav` |
-| S02-C | C | I | M01 | `audio/M01-I.wav` |
-| S02-V | V | R | M01 | `audio/M01-R.wav` |
+| S01-C | C | I | M01 | `audio/M01-I.wav` |
+| S01-V | V | R | M01 | `audio/M01-R.wav` |
+| S02-C | C | R | M01 | `audio/M01-R.wav` |
+| S02-V | V | I | M01 | `audio/M01-I.wav` |
 
 依此規則將 S03–S24 對應到 M02–M12（每個 music pair 對應兩個 item，共 4 個 trials）。
 
