@@ -1,6 +1,7 @@
 site_name: PsychoPy 音樂 × 語言實驗建置手冊
 site_description: PsychoPy Builder 建置音樂與語言判斷實驗的完整教學手冊
 site_author: Jessy
+site_url: https://weilinglindachen.github.io/psychopy-manual/
 docs_dir: docs
 
 # 若之後想在網站上重新顯示 GitHub 連結，取消下面三行的註解即可
