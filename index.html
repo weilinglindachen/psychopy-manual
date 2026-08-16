@@ -301,7 +301,7 @@
   <a href="#_1" class="md-nav__link">
     <span class="md-ellipsis">
       
-        整體五階段規劃
+        整體四階段規劃
       
     </span>
   </a>
@@ -309,7 +309,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_6" class="md-nav__link">
+  <a href="#_5" class="md-nav__link">
     <span class="md-ellipsis">
       
         時程規劃
@@ -320,7 +320,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_7" class="md-nav__link">
+  <a href="#_6" class="md-nav__link">
     <span class="md-ellipsis">
       
         建議的資料夾結構
@@ -446,33 +446,6 @@
   
 
     
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="stage5/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    第五階段：測試與正式定稿
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-    
   </ul>
 </nav>
                   </div>
@@ -492,7 +465,7 @@
 
 <h1 id="psychopy">PsychoPy 音樂 × 語言實驗建置手冊<a class="headerlink" href="#psychopy" title="Permanent link">&para;</a></h1>
 <p>作者：陳韋伶</p>
-<p>這份手冊記錄本研究使用 PsychoPy Builder 建置實驗的完整流程。整體工作分為 <strong>五個階段</strong>，每個階段都會先完成一個可獨立測試的版本，再進入下一階段。</p>
+<p>這份手冊記錄本研究使用 PsychoPy Builder 建置實驗的完整流程。整體工作分為 <strong>四個階段</strong>，每個階段都會先完成一個可獨立測試的版本，再進入下一階段。</p>
 <div class="admonition tip">
 <p class="admonition-title">如何使用這份手冊</p>
 <p>進行每個任務時，依序閱讀：</p>
@@ -534,7 +507,7 @@ don&#39;t skip ahead. I&#39;ll report back the result after each step.
 </ol>
 <p>這樣做的好處是排查過程會留下紀錄，也能訓練自己看懂錯誤訊息，之後遇到類似狀況會更快解決。</p>
 </div>
-<h2 id="_1">整體五階段規劃<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<h2 id="_1">整體四階段規劃<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
 <table>
 <thead>
 <tr>
@@ -561,19 +534,13 @@ don&#39;t skip ahead. I&#39;ll report back the result after each step.
 <td>第三階段</td>
 <td>任務 9–11</td>
 <td>擴充成完整 48 trials，並檢查四種條件是否平衡</td>
-<td>🟡 進行中</td>
+<td>✅ 已完成</td>
 </tr>
 <tr>
 <td>第四階段</td>
 <td>任務 12–18</td>
 <td>完成受試者實際看到的完整實驗（說明、練習、休息、結束畫面）</td>
-<td>🟡 進行中</td>
-</tr>
-<tr>
-<td>第五階段</td>
-<td>任務 18–22</td>
-<td>測試、檢查 CSV、pilot test、正式定稿</td>
-<td>⬜ 未開始</td>
+<td>✅ 已完成</td>
 </tr>
 </tbody>
 </table>
@@ -646,17 +613,7 @@ don&#39;t skip ahead. I&#39;ll report back the result after each step.
 <li>完整 end-to-end 測試</li>
 </ul>
 <p>完成後，實驗即可交由受試者實際操作。詳見 <a href="stage4/">第四階段</a>。</p>
-<h3 id="_5">第五階段：測試、檢查與正式定稿<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
-<p>預計完成：</p>
-<ul>
-<li>完整跑完 48 trials</li>
-<li>檢查 CSV</li>
-<li>建立正式版與備份</li>
-<li>學生 pilot test</li>
-<li>根據 pilot 結果修正</li>
-</ul>
-<p>完成後會得到可正式收案的最終版本。</p>
-<h2 id="_6">時程規劃<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
+<h2 id="_5">時程規劃<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
 <p><strong>2026/08/09</strong>：完成第一、第二階段</p>
 <ol>
 <li>顯示 fixation <code>+</code></li>
@@ -668,7 +625,15 @@ don&#39;t skip ahead. I&#39;ll report back the result after each step.
 <li>播放 Excel 指定的五和弦音檔，並與五個 words 同步</li>
 <li>在 CSV 中記錄每題答對或答錯、RT 與 timing</li>
 </ol>
-<h2 id="_7">建議的資料夾結構<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h2>
+<p><strong>2026/08/16</strong>：完成第三、第四階段</p>
+<ol>
+<li>建立完整 48-trial 條件表，並確認四種條件（C+R、C+I、V+R、V+I）平衡</li>
+<li>設定固定的 pseudorandom trial 呈現順序，完成 48-trial 正式測試與 CSV 驗證</li>
+<li>建立 Practice trials、Instructions、Practice → Formal experiment 轉場</li>
+<li>加入中途休息、Participant information、實驗結束畫面</li>
+<li>完成完整 end-to-end 測試</li>
+</ol>
+<h2 id="_6">建議的資料夾結構<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
 <div class="highlight"><pre><span></span><code>Jessy_psychopy/
 ├── practice01.psyexp
 ├── conditions_test.xlsx
@@ -705,7 +670,7 @@ don&#39;t skip ahead. I&#39;ll report back the result after each step.
     <span class="md-icon" title="最後更新">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime" title="2026年8月16日 19:11:39 CST">2026年8月16日 19:11:39</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime" title="2026年8月16日 22:33:37 CST">2026年8月16日 22:33:37</span>
   </span>
 
     
