@@ -64,6 +64,8 @@ markdown_extensions:
   - pymdownx.tabbed:
       alternate_style: true
   - pymdownx.highlight
+  - pymdownx.tasklist:
+      custom_checkbox: true
   - tables
   - attr_list
   - md_in_html
